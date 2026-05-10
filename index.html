@@ -5,299 +5,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>法人儀表板</title>
 <style>
-  :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --border: #30363d;
-    --cyan: #00d4ff;
-    --green: #3fb950;
-    --red: #f85149;
-    --yellow: #e3b341;
-    --text: #c9d1d9;
-    --muted: #8b949e;
-    --tab-active: #1f6feb;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; font-size: 14px; }
+:root {
+  --bg:#0d1117; --surface:#161b22; --border:#30363d;
+  --cyan:#00d4ff; --green:#3fb950; --red:#f85149;
+  --yellow:#e3b341; --text:#c9d1d9; --muted:#8b949e;
+  --blue:#1f6feb; --purple:#bc8cff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;font-size:13px}
 
-  header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  header h1 { font-size: 18px; color: var(--cyan); letter-spacing: 1px; }
-  #meta { font-size: 12px; color: var(--muted); }
-  #refresh-btn {
-    background: var(--tab-active);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 14px;
-    cursor: pointer;
-    font-size: 13px;
-  }
-  #refresh-btn:hover { opacity: 0.85; }
+header{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:10px 14px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:200
+}
+header h1{font-size:17px;color:var(--cyan);letter-spacing:1px}
+#meta{font-size:11px;color:var(--muted)}
+#refresh-btn{
+  background:var(--blue);color:#fff;border:none;border-radius:5px;
+  padding:5px 12px;cursor:pointer;font-size:12px
+}
+#refresh-btn:hover{opacity:.85}
 
-  nav {
-    display: flex;
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-  }
-  nav button {
-    flex: 1;
-    min-width: 100px;
-    padding: 10px 8px;
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--muted);
-    cursor: pointer;
-    font-size: 13px;
-    white-space: nowrap;
-    transition: color 0.2s;
-  }
-  nav button.active { color: var(--cyan); border-bottom-color: var(--cyan); }
-  nav button:hover { color: var(--text); }
+/* ── Main nav ── */
+.main-nav{
+  display:flex;background:var(--surface);border-bottom:2px solid var(--border);
+  overflow-x:auto
+}
+.main-nav button{
+  flex:1;min-width:80px;padding:9px 6px;background:none;border:none;
+  border-bottom:2px solid transparent;color:var(--muted);cursor:pointer;
+  font-size:13px;white-space:nowrap;transition:color .15s;margin-bottom:-2px
+}
+.main-nav button.active{color:var(--cyan);border-bottom-color:var(--cyan)}
+.main-nav button:hover:not(.active){color:var(--text)}
 
-  .tab-content { display: none; padding: 12px; }
-  .tab-content.active { display: block; }
+/* ── Sub nav ── */
+.sub-nav{
+  display:flex;flex-wrap:wrap;gap:4px;padding:8px 12px;
+  background:#0f151c;border-bottom:1px solid var(--border)
+}
+.sub-nav button{
+  padding:4px 10px;background:var(--surface);border:1px solid var(--border);
+  border-radius:4px;color:var(--muted);cursor:pointer;font-size:12px;white-space:nowrap
+}
+.sub-nav button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.sub-nav button:hover:not(.active){color:var(--text)}
 
-  .search-bar { margin-bottom: 10px; display: flex; gap: 8px; }
-  .search-bar input {
-    flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text);
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-  .search-bar input:focus { outline: none; border-color: var(--cyan); }
+/* ── Content ── */
+.content{padding:10px 12px}
+.search-row{display:flex;gap:8px;margin-bottom:8px;align-items:center}
+.search-row input{
+  flex:1;max-width:260px;background:var(--surface);border:1px solid var(--border);
+  border-radius:5px;color:var(--text);padding:5px 9px;font-size:12px
+}
+.search-row input:focus{outline:none;border-color:var(--cyan)}
+.count{font-size:11px;color:var(--muted)}
 
-  .count-badge { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{
+  background:var(--surface);color:var(--muted);font-weight:600;
+  padding:7px 9px;text-align:right;border-bottom:1px solid var(--border);
+  position:sticky;top:0;cursor:pointer;white-space:nowrap;user-select:none
+}
+thead th.left{text-align:left}
+thead th.group{
+  text-align:center;font-size:10px;color:var(--cyan);background:#0d1f33;
+  cursor:default
+}
+thead th.sort-asc::after{content:' ▲';color:var(--cyan)}
+thead th.sort-desc::after{content:' ▼';color:var(--cyan)}
 
-  .table-wrap { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  thead th {
-    background: var(--surface);
-    color: var(--muted);
-    font-weight: 600;
-    padding: 8px 10px;
-    text-align: right;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    cursor: pointer;
-    white-space: nowrap;
-    user-select: none;
-  }
-  thead th.left { text-align: left; }
-  thead th.sort-asc::after { content: ' ▲'; color: var(--cyan); }
-  thead th.sort-desc::after { content: ' ▼'; color: var(--cyan); }
-  thead th.group-header {
-    text-align: center;
-    font-size: 11px;
-    color: var(--cyan);
-    background: #0d1f33;
-    cursor: default;
-  }
+tbody tr{border-bottom:1px solid var(--border);transition:background .12s}
+tbody tr:hover{background:#1c2128}
+td{padding:6px 9px;text-align:right;white-space:nowrap}
+td.left{text-align:left}
 
-  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
-  tbody tr:hover { background: #1c2128; }
-  td { padding: 7px 10px; text-align: right; white-space: nowrap; }
-  td.left { text-align: left; }
+.rank{color:var(--muted);font-size:11px}
+.sid{color:var(--cyan);font-weight:600}
+.name{color:var(--text)}
+.price{color:var(--yellow)}
+.pos{color:var(--green)}
+.neg{color:var(--red)}
+.neu{color:var(--muted)}
+.vol{color:#a5d6ff}
+.bond-badge{
+  display:inline-block;font-size:9px;padding:1px 4px;border-radius:3px;
+  margin-left:3px;background:#3a2a10;color:var(--yellow)
+}
+.eq-badge{
+  display:inline-block;font-size:9px;padding:1px 4px;border-radius:3px;
+  margin-left:3px;background:#1a3a1a;color:var(--green)
+}
 
-  .rank { color: var(--muted); font-size: 12px; }
-  .stock-id { color: var(--cyan); font-weight: 600; }
-  .stock-name { color: var(--text); }
-  .close-price { color: var(--yellow); }
-  .pos { color: var(--green); }
-  .neg { color: var(--red); }
-  .neutral { color: var(--muted); }
-  .vol { color: #a5d6ff; }
+/* ── Summary table ── */
+.summary-tbl td:first-child{text-align:left;color:var(--cyan);font-weight:600}
 
-  .etf-badge {
-    display: inline-block;
-    font-size: 10px;
-    padding: 1px 5px;
-    border-radius: 3px;
-    margin-left: 4px;
-    background: #1a3a1a;
-    color: var(--green);
-  }
-  .etf-badge.bond { background: #3a2a10; color: var(--yellow); }
-
-  #loading { text-align: center; padding: 60px; color: var(--muted); font-size: 16px; }
-  #error-msg { display: none; text-align: center; padding: 40px; color: var(--red); }
-
-  .summary-bar {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .summary-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 16px;
-    min-width: 160px;
-    flex: 1;
-  }
-  .summary-card .label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
-  .summary-card .value { font-size: 16px; font-weight: 700; }
+/* ── States ── */
+#loading{text-align:center;padding:60px;color:var(--muted);font-size:16px}
+#error-msg{display:none;text-align:center;padding:40px;color:var(--red)}
 </style>
 </head>
 <body>
 
 <header>
   <h1>⚡ 法人儀表板</h1>
-  <div style="display:flex;align-items:center;gap:12px;">
+  <div style="display:flex;align-items:center;gap:10px">
     <span id="meta">載入中...</span>
     <button id="refresh-btn" onclick="triggerUpdate()">手動更新</button>
   </div>
 </header>
 
-<nav>
-  <button class="active" onclick="switchTab('etf', this)">ETF 排行</button>
-  <button onclick="switchTab('trust', this)">投信買超</button>
-  <button onclick="switchTab('foreign', this)">外資買超</button>
-  <button onclick="switchTab('sync', this)">同步買超</button>
-</nav>
-
 <div id="loading">資料載入中...</div>
 <div id="error-msg">⚠️ 資料載入失敗，請稍後再試</div>
 
-<!-- ETF排行 -->
-<div id="tab-etf" class="tab-content active" style="display:none;">
-  <div id="summary-etf" class="summary-bar"></div>
-  <div class="search-bar">
-    <input type="text" id="search-etf" placeholder="搜尋代號或名稱..." oninput="filterTable('etf')">
-  </div>
-  <div id="count-etf" class="count-badge"></div>
-  <div class="table-wrap">
-    <table id="table-etf">
-      <thead>
-        <tr>
-          <th class="left" onclick="sortTable('etf',0)">排</th>
-          <th class="left" onclick="sortTable('etf',1)">代號</th>
-          <th class="left" onclick="sortTable('etf',2)">名稱</th>
-          <th onclick="sortTable('etf',3)">收盤</th>
-          <th onclick="sortTable('etf',4)">成交量(張)</th>
-          <th onclick="sortTable('etf',5)">成交額(億)</th>
-          <th onclick="sortTable('etf',6)">外資買超</th>
-          <th onclick="sortTable('etf',7)">投信買超</th>
-          <th onclick="sortTable('etf',8)">自營買超</th>
-        </tr>
-      </thead>
-      <tbody id="tbody-etf"></tbody>
-    </table>
-  </div>
-</div>
-
-<!-- 投信買超 -->
-<div id="tab-trust" class="tab-content" style="display:none;">
-  <div class="search-bar">
-    <input type="text" id="search-trust" placeholder="搜尋代號或名稱..." oninput="filterTable('trust')">
-  </div>
-  <div id="count-trust" class="count-badge"></div>
-  <div class="table-wrap">
-    <table id="table-trust">
-      <thead>
-        <tr>
-          <th class="left" rowspan="2" onclick="sortTable('trust',0)">排</th>
-          <th class="left" rowspan="2" onclick="sortTable('trust',1)">代號</th>
-          <th class="left" rowspan="2" onclick="sortTable('trust',2)">名稱</th>
-          <th rowspan="2" onclick="sortTable('trust',3)">收盤</th>
-          <th rowspan="2" onclick="sortTable('trust',4)">漲跌%</th>
-          <th class="group-header" colspan="2">近1日</th>
-          <th class="group-header" colspan="2">近5日</th>
-          <th class="group-header" colspan="2">近10日</th>
-        </tr>
-        <tr>
-          <th onclick="sortTable('trust',5)">買超(張)</th>
-          <th onclick="sortTable('trust',6)">量比%</th>
-          <th onclick="sortTable('trust',7)">買超(張)</th>
-          <th onclick="sortTable('trust',8)">量比%</th>
-          <th onclick="sortTable('trust',9)">買超(張)</th>
-          <th onclick="sortTable('trust',10)">量比%</th>
-        </tr>
-      </thead>
-      <tbody id="tbody-trust"></tbody>
-    </table>
-  </div>
-</div>
-
-<!-- 外資買超 -->
-<div id="tab-foreign" class="tab-content" style="display:none;">
-  <div class="search-bar">
-    <input type="text" id="search-foreign" placeholder="搜尋代號或名稱..." oninput="filterTable('foreign')">
-  </div>
-  <div id="count-foreign" class="count-badge"></div>
-  <div class="table-wrap">
-    <table id="table-foreign">
-      <thead>
-        <tr>
-          <th class="left" rowspan="2" onclick="sortTable('foreign',0)">排</th>
-          <th class="left" rowspan="2" onclick="sortTable('foreign',1)">代號</th>
-          <th class="left" rowspan="2" onclick="sortTable('foreign',2)">名稱</th>
-          <th rowspan="2" onclick="sortTable('foreign',3)">收盤</th>
-          <th rowspan="2" onclick="sortTable('foreign',4)">漲跌%</th>
-          <th rowspan="2" onclick="sortTable('foreign',5)">外資持股%</th>
-          <th class="group-header" colspan="2">近1日</th>
-          <th class="group-header" colspan="2">近5日</th>
-          <th class="group-header" colspan="2">近10日</th>
-        </tr>
-        <tr>
-          <th onclick="sortTable('foreign',6)">買超(張)</th>
-          <th onclick="sortTable('foreign',7)">量比%</th>
-          <th onclick="sortTable('foreign',8)">買超(張)</th>
-          <th onclick="sortTable('foreign',9)">量比%</th>
-          <th onclick="sortTable('foreign',10)">買超(張)</th>
-          <th onclick="sortTable('foreign',11)">量比%</th>
-        </tr>
-      </thead>
-      <tbody id="tbody-foreign"></tbody>
-    </table>
-  </div>
-</div>
-
-<!-- 同步買超 -->
-<div id="tab-sync" class="tab-content" style="display:none;">
-  <div class="search-bar">
-    <input type="text" id="search-sync" placeholder="搜尋代號或名稱..." oninput="filterTable('sync')">
-  </div>
-  <div id="count-sync" class="count-badge"></div>
-  <div class="table-wrap">
-    <table id="table-sync">
-      <thead>
-        <tr>
-          <th class="left" rowspan="2" onclick="sortTable('sync',0)">排</th>
-          <th class="left" rowspan="2" onclick="sortTable('sync',1)">代號</th>
-          <th class="left" rowspan="2" onclick="sortTable('sync',2)">名稱</th>
-          <th rowspan="2" onclick="sortTable('sync',3)">收盤</th>
-          <th rowspan="2" onclick="sortTable('sync',4)">漲跌%</th>
-          <th class="group-header" colspan="3">近1日</th>
-          <th class="group-header" colspan="3">近5日</th>
-        </tr>
-        <tr>
-          <th onclick="sortTable('sync',5)">投信(張)</th>
-          <th onclick="sortTable('sync',6)">外資(張)</th>
-          <th onclick="sortTable('sync',7)">合計(張)</th>
-          <th onclick="sortTable('sync',8)">投信(張)</th>
-          <th onclick="sortTable('sync',9)">外資(張)</th>
-          <th onclick="sortTable('sync',10)">合計(張)</th>
-        </tr>
-      </thead>
-      <tbody id="tbody-sync"></tbody>
-    </table>
+<div id="app" style="display:none">
+  <nav class="main-nav" id="main-nav"></nav>
+  <div class="sub-nav" id="sub-nav"></div>
+  <div class="content">
+    <div class="search-row">
+      <input type="text" id="search-box" placeholder="搜尋代號或名稱..." oninput="onSearch()">
+      <span class="count" id="count-badge"></span>
+    </div>
+    <div class="table-wrap" id="table-area"></div>
   </div>
 </div>
 
@@ -306,194 +137,429 @@ const GITHUB_OWNER = 'shihpc';
 const GITHUB_REPO  = 'institutional-dashboard';
 const DATA_URL     = 'data/etf.json';
 
-let allData = {};
+let D = {};   // full JSON
 let sortState = {};
 
-function fmt(v, digits = 0) {
-  if (v === null || v === undefined || isNaN(Number(v))) return '-';
-  const n = Number(v);
-  if (digits === 0) return Math.round(n).toLocaleString();
-  return n.toFixed(digits);
+// ── tab config ───────────────────────────────────────────────────────────────
+
+const TABS = [
+  {
+    key: 'etf', label: 'ETF 排行',
+    subs: [
+      {key:'vol_nb',  label:'非債-成交量'},
+      {key:'vol_b',   label:'債券-成交量'},
+      {key:'mv_nb',   label:'非債-市值'},
+      {key:'mv_b',    label:'債券-市值'},
+      {key:'sum',     label:'匯總'},
+    ],
+    getData(d, sk) {
+      if (sk==='vol_nb') return d.etf.volume.non_bond;
+      if (sk==='vol_b')  return d.etf.volume.bond;
+      if (sk==='mv_nb')  return d.etf.mktval.non_bond;
+      if (sk==='mv_b')   return d.etf.mktval.bond;
+      if (sk==='sum')    return d.etf.summary;
+      return [];
+    },
+    buildTable(rows, sk) {
+      if (sk === 'sum') return buildEtfSummaryTable(rows);
+      return buildEtfRankTable(rows);
+    }
+  },
+  {
+    key: 'trust', label: '投信買賣',
+    subs: [
+      {key:'d1.buy',    label:'1日買超(金額)'},
+      {key:'d1.sell',   label:'1日賣超(金額)'},
+      {key:'d5.buy',    label:'5日買超(金額)'},
+      {key:'d5.sell',   label:'5日賣超(金額)'},
+      {key:'d20.buy',   label:'20日買超(金額)'},
+      {key:'d20.sell',  label:'20日賣超(金額)'},
+      {key:'d1.buy_vr', label:'1日買超(量比)'},
+      {key:'d1.sell_vr',label:'1日賣超(量比)'},
+      {key:'d5.buy_vr', label:'5日買超(量比)'},
+      {key:'d5.sell_vr',label:'5日賣超(量比)'},
+      {key:'d20.buy_vr',label:'20日買超(量比)'},
+      {key:'d20.sell_vr',label:'20日賣超(量比)'},
+    ],
+    getData(d, sk) { return getDeep(d.trust, sk); },
+    buildTable(rows, sk) {
+      return buildEntityTable(rows, sk, false);
+    }
+  },
+  {
+    key: 'foreign', label: '外資買賣',
+    subs: [
+      {key:'d1.buy',    label:'1日買超(金額)'},
+      {key:'d1.sell',   label:'1日賣超(金額)'},
+      {key:'d5.buy',    label:'5日買超(金額)'},
+      {key:'d5.sell',   label:'5日賣超(金額)'},
+      {key:'d20.buy',   label:'20日買超(金額)'},
+      {key:'d20.sell',  label:'20日賣超(金額)'},
+      {key:'d1.buy_vr', label:'1日買超(量比)'},
+      {key:'d1.sell_vr',label:'1日賣超(量比)'},
+      {key:'d5.buy_vr', label:'5日買超(量比)'},
+      {key:'d5.sell_vr',label:'5日賣超(量比)'},
+      {key:'d20.buy_vr',label:'20日買超(量比)'},
+      {key:'d20.sell_vr',label:'20日賣超(量比)'},
+    ],
+    getData(d, sk) { return getDeep(d.foreign, sk); },
+    buildTable(rows, sk) {
+      return buildEntityTable(rows, sk, true);
+    }
+  },
+  {
+    key: 'sync', label: '同步買賣',
+    subs: [
+      {key:'d1.buy',         label:'1日同步買超'},
+      {key:'d1.sell',        label:'1日同步賣超'},
+      {key:'d5.buy',         label:'5日同步買超'},
+      {key:'d5.sell',        label:'5日同步賣超'},
+      {key:'trust_vol.d1',   label:'投信量比(1日)'},
+      {key:'trust_vol.d5',   label:'投信量比(5日)'},
+      {key:'foreign_vol.d1', label:'外資量比(1日)'},
+      {key:'foreign_vol.d5', label:'外資量比(5日)'},
+    ],
+    getData(d, sk) { return getDeep(d.sync, sk); },
+    buildTable(rows, sk) {
+      return buildSyncTable(rows, sk);
+    }
+  },
+];
+
+let curMain = 'etf';
+let curSub  = 'vol_nb';
+
+// ── helpers ──────────────────────────────────────────────────────────────────
+
+function getDeep(obj, path) {
+  return path.split('.').reduce((o, k) => (o && o[k] !== undefined ? o[k] : []), obj);
 }
 
-function fmtVol(v) {
-  // Trading_Volume is in shares; 1張=1000股
-  if (!v) return '-';
-  return Math.round(Number(v) / 1000).toLocaleString();
+function fmt(v, d = 0) {
+  if (v === null || v === undefined || v === '' || isNaN(+v)) return '-';
+  const n = +v;
+  if (d === 0) return Math.round(n).toLocaleString();
+  return n.toFixed(d);
+}
+
+function fmtSign(v, d = 0) {
+  const n = +v;
+  if (!isFinite(n) || n === 0) return '<span class="neu">-</span>';
+  const cls = n > 0 ? 'pos' : 'neg';
+  const s   = n > 0 ? '+' : '';
+  return `<span class="${cls}">${s}${fmt(n, d)}</span>`;
 }
 
 function dc(v) {
-  const n = Number(v);
+  const n = +v;
   if (n > 0) return 'pos';
   if (n < 0) return 'neg';
-  return 'neutral';
+  return 'neu';
 }
 
-function renderETF(items, summary) {
-  // Summary cards
-  const bar = document.getElementById('summary-etf');
-  bar.innerHTML = (summary || []).map(s => `
-    <div class="summary-card">
-      <div class="label">${s.label}</div>
-      <div class="value vol">${Math.round(s.volume / 1000).toLocaleString()} 張</div>
-      <div style="font-size:12px;margin-top:4px;">
-        外資 <span class="${dc(s.foreign_net)}">${s.foreign_net > 0 ? '+' : ''}${Math.round(s.foreign_net / 1000).toLocaleString()}</span>
-        投信 <span class="${dc(s.trust_net)}">${s.trust_net > 0 ? '+' : ''}${Math.round(s.trust_net / 1000).toLocaleString()}</span>
-      </div>
-    </div>`).join('');
+function th(label, colIdx, tabId, left = false, group = false) {
+  if (group) return `<th class="group" colspan="${colIdx}">${label}</th>`;
+  return `<th class="${left ? 'left' : ''}" onclick="sortCol('${tabId}',${colIdx})">${label}</th>`;
+}
 
-  const tbody = document.getElementById('tbody-etf');
-  tbody.innerHTML = (items || []).map(r => {
+// ── ETF tables ───────────────────────────────────────────────────────────────
+
+function buildEtfRankTable(rows) {
+  const hdr = `<thead><tr>
+    ${th('排',0,'etf',true)} ${th('代號',1,'etf',true)} ${th('名稱',2,'etf',true)}
+    ${th('收盤',3,'etf')} ${th('成交量(張)',4,'etf')} ${th('成交額(億)',5,'etf')} ${th('市值(億)',6,'etf')}
+    ${th('外資(張)',7,'etf')} ${th('投信(張)',8,'etf')} ${th('自營(張)',9,'etf')}
+  </tr></thead>`;
+  const body = rows.map(r => {
     const badge = r.bond
-      ? `<span class="etf-badge bond">債</span>`
-      : `<span class="etf-badge">股</span>`;
+      ? `<span class="bond-badge">債</span>`
+      : `<span class="eq-badge">股</span>`;
     return `<tr data-search="${r.stock_id} ${r.stock_name}">
       <td class="left rank">${r.rank}</td>
-      <td class="left stock-id">${r.stock_id}</td>
-      <td class="left stock-name">${r.stock_name}${badge}</td>
-      <td class="close-price">${fmt(r.close, 2)}</td>
-      <td class="vol">${fmtVol(r.volume)}</td>
+      <td class="left sid">${r.stock_id}</td>
+      <td class="left name">${r.stock_name}${badge}</td>
+      <td class="price">${fmt(r.close, 2)}</td>
+      <td class="vol">${fmt(r.vol_k)}</td>
       <td class="vol">${fmt(r.money_b, 2)}</td>
-      <td class="${dc(r.foreign_net)}">${fmt(r.foreign_net / 1000)}</td>
-      <td class="${dc(r.trust_net)}">${fmt(r.trust_net / 1000)}</td>
-      <td class="${dc(r.dealer_net)}">${fmt(r.dealer_net / 1000)}</td>
+      <td class="vol">${fmt(r.mktval_b, 2)}</td>
+      <td class="${dc(r.foreign_net_lots)}">${fmtSign(r.foreign_net_lots, 1)}</td>
+      <td class="${dc(r.trust_net_lots)}">${fmtSign(r.trust_net_lots, 1)}</td>
+      <td class="${dc(r.dealer_net_lots)}">${fmtSign(r.dealer_net_lots, 1)}</td>
     </tr>`;
   }).join('');
-  document.getElementById('count-etf').textContent = `共 ${(items || []).length} 支 ETF`;
+  return `<table id="tbl-etf"><${hdr}<tbody>${body}</tbody></table>`;
 }
 
-function renderTrust(data) {
-  const tbody = document.getElementById('tbody-trust');
-  tbody.innerHTML = (data || []).map(r => `
-    <tr data-search="${r.stock_id} ${r.stock_name}">
-      <td class="left rank">${r.rank}</td>
-      <td class="left stock-id">${r.stock_id}</td>
-      <td class="left stock-name">${r.stock_name}</td>
-      <td class="close-price">${fmt(r.close, 2)}</td>
-      <td class="${dc(r.close_chg)}">${r.close_chg > 0 ? '+' : ''}${fmt(r.close_chg, 2)}%</td>
-      <td class="${dc(r.d1.diff)}">${fmt(r.d1.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d1.vol_ratio, 1)}%</td>
-      <td class="${dc(r.d5.diff)}">${fmt(r.d5.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d5.vol_ratio, 1)}%</td>
-      <td class="${dc(r.d10.diff)}">${fmt(r.d10.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d10.vol_ratio, 1)}%</td>
-    </tr>`).join('');
-  document.getElementById('count-trust').textContent = `共 ${(data || []).length} 支`;
+function buildEtfSummaryTable(rows) {
+  const hdr = `<thead><tr>
+    <th class="left" style="cursor:default">類別</th>
+    <th style="cursor:default">成交量(張)</th>
+    <th style="cursor:default">成交額(億)</th>
+    <th style="cursor:default">市值(億)</th>
+    <th style="cursor:default">外資買超(千元)</th>
+    <th style="cursor:default">投信買超(千元)</th>
+    <th style="cursor:default">自營買超(千元)</th>
+  </tr></thead>`;
+  const body = rows.map(r => `<tr class="summary-tbl">
+    <td class="left">${r.label}</td>
+    <td class="vol">${fmt(r.vol_k)}</td>
+    <td class="vol">${fmt(r.money_b, 2)}</td>
+    <td class="vol">${fmt(r.mktval_b, 2)}</td>
+    <td class="${dc(r.foreign_net_k)}">${fmtSign(r.foreign_net_k)}</td>
+    <td class="${dc(r.trust_net_k)}">${fmtSign(r.trust_net_k)}</td>
+    <td class="${dc(r.dealer_net_k)}">${fmtSign(r.dealer_net_k)}</td>
+  </tr>`).join('');
+  return `<table><${hdr}<tbody>${body}</tbody></table>`;
 }
 
-function renderForeign(data) {
-  const tbody = document.getElementById('tbody-foreign');
-  tbody.innerHTML = (data || []).map(r => `
-    <tr data-search="${r.stock_id} ${r.stock_name}">
-      <td class="left rank">${r.rank}</td>
-      <td class="left stock-id">${r.stock_id}</td>
-      <td class="left stock-name">${r.stock_name}</td>
-      <td class="close-price">${fmt(r.close, 2)}</td>
-      <td class="${dc(r.close_chg)}">${r.close_chg > 0 ? '+' : ''}${fmt(r.close_chg, 2)}%</td>
-      <td class="neutral">${r.foreign_ratio != null ? fmt(r.foreign_ratio, 1) + '%' : '-'}</td>
-      <td class="${dc(r.d1.diff)}">${fmt(r.d1.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d1.vol_ratio, 1)}%</td>
-      <td class="${dc(r.d5.diff)}">${fmt(r.d5.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d5.vol_ratio, 1)}%</td>
-      <td class="${dc(r.d10.diff)}">${fmt(r.d10.diff / 1000)}</td>
-      <td class="neutral">${fmt(r.d10.vol_ratio, 1)}%</td>
-    </tr>`).join('');
-  document.getElementById('count-foreign').textContent = `共 ${(data || []).length} 支`;
+// ── 投信/外資 tables ──────────────────────────────────────────────────────────
+
+function isVolRatio(sk) { return sk.includes('_vr'); }
+
+function getPeriod(sk) {
+  if (sk.startsWith('d1')) return '1日';
+  if (sk.startsWith('d5')) return '5日';
+  if (sk.startsWith('d20')) return '20日';
+  return '';
 }
 
-function renderSync(data) {
-  const tbody = document.getElementById('tbody-sync');
-  tbody.innerHTML = (data || []).map(r => `
-    <tr data-search="${r.stock_id} ${r.stock_name}">
+function buildEntityTable(rows, sk, hasForeign) {
+  const vr   = isVolRatio(sk);
+  const isBuy = sk.includes('buy');
+  const netLabel = isBuy ? '買超' : '賣超';
+  const tid = hasForeign ? 'foreign' : 'trust';
+
+  let cols, rowFn;
+  if (vr) {
+    // 量比排行
+    cols = `<tr>
+      ${th('排',0,tid,true)} ${th('代號',1,tid,true)} ${th('名稱',2,tid,true)}
+      ${th('收盤',3,tid)} ${th('漲跌%',4,tid)} ${th('量比%',5,tid)}
+      ${th(`${netLabel}(千元)`,6,tid)} ${th(`${netLabel}(張)`,7,tid)} ${th('乖離率%',8,tid)}
+      ${hasForeign ? `${th('持股%',9,tid)} ${th('持股(張)',10,tid)} ${th('持股市值(M)',11,tid)} ${th('持股變動%',12,tid)}` : ''}
+    </tr>`;
+    const netK  = sk.startsWith('d1') ? 'd1_net_k' : sk.startsWith('d5') ? 'd5_net_k' : 'd20_net_k';
+    const lots  = sk.startsWith('d1') ? 'd1_lots'  : sk.startsWith('d5') ? 'd5_lots'  : 'd20_lots';
+    const vrKey = sk.startsWith('d1') ? 'd1_vr'    : sk.startsWith('d5') ? 'd5_vr'    : 'd20_vr';
+    rowFn = r => `<tr data-search="${r.stock_id} ${r.stock_name}">
       <td class="left rank">${r.rank}</td>
-      <td class="left stock-id">${r.stock_id}</td>
-      <td class="left stock-name">${r.stock_name}</td>
-      <td class="close-price">${fmt(r.close, 2)}</td>
-      <td class="${dc(r.close_chg)}">${r.close_chg > 0 ? '+' : ''}${fmt(r.close_chg, 2)}%</td>
-      <td class="${dc(r.d1.trust)}">${fmt(r.d1.trust / 1000)}</td>
-      <td class="${dc(r.d1.foreign)}">${fmt(r.d1.foreign / 1000)}</td>
-      <td class="${dc(r.d1.total)}" style="font-weight:600">${fmt(r.d1.total / 1000)}</td>
-      <td class="${dc(r.d5.trust)}">${fmt(r.d5.trust / 1000)}</td>
-      <td class="${dc(r.d5.foreign)}">${fmt(r.d5.foreign / 1000)}</td>
-      <td class="${dc(r.d5.total)}" style="font-weight:600">${fmt(r.d5.total / 1000)}</td>
-    </tr>`).join('');
-  document.getElementById('count-sync').textContent = `共 ${(data || []).length} 支`;
+      <td class="left sid">${r.stock_id}</td>
+      <td class="left name">${r.stock_name}</td>
+      <td class="price">${fmt(r.close, 2)}</td>
+      <td>${fmtSign(r.close_chg, 2)}</td>
+      <td class="vol">${fmt(r[vrKey], 2)}</td>
+      <td class="${dc(r[netK])}">${fmtSign(r[netK])}</td>
+      <td class="${dc(r[lots])}">${fmtSign(r[lots], 1)}</td>
+      <td class="${dc(r.ma20_bias)}">${fmtSign(r.ma20_bias, 2)}</td>
+      ${hasForeign ? `
+      <td class="neu">${r.hold_ratio ? fmt(r.hold_ratio, 1)+'%' : '-'}</td>
+      <td class="neu">${r.hold_lots ? fmt(r.hold_lots) : '-'}</td>
+      <td class="neu">${r.hold_mktval ? fmt(r.hold_mktval, 1) : '-'}</td>
+      <td class="${dc(r.hold_chg)}">${r.hold_chg ? fmtSign(r.hold_chg, 2) : '-'}</td>` : ''}
+    </tr>`;
+  } else {
+    // 金額排行
+    const netK  = sk.startsWith('d1') ? 'd1_net_k' : sk.startsWith('d5') ? 'd5_net_k' : 'd20_net_k';
+    const lots  = sk.startsWith('d1') ? 'd1_lots'  : sk.startsWith('d5') ? 'd5_lots'  : 'd20_lots';
+    const vrKey = sk.startsWith('d1') ? 'd1_vr'    : sk.startsWith('d5') ? 'd5_vr'    : 'd20_vr';
+    cols = `<tr>
+      ${th('排',0,tid,true)} ${th('代號',1,tid,true)} ${th('名稱',2,tid,true)}
+      ${th('收盤',3,tid)} ${th('漲跌%',4,tid)}
+      ${th(`${netLabel}(千元)`,5,tid)} ${th(`${netLabel}(張)`,6,tid)} ${th('量比%',7,tid)} ${th('乖離率%',8,tid)}
+      ${hasForeign ? `${th('持股%',9,tid)} ${th('持股(張)',10,tid)} ${th('持股市值(M)',11,tid)} ${th('持股變動%',12,tid)}` : ''}
+    </tr>`;
+    rowFn = r => `<tr data-search="${r.stock_id} ${r.stock_name}">
+      <td class="left rank">${r.rank}</td>
+      <td class="left sid">${r.stock_id}</td>
+      <td class="left name">${r.stock_name}</td>
+      <td class="price">${fmt(r.close, 2)}</td>
+      <td>${fmtSign(r.close_chg, 2)}</td>
+      <td class="${dc(r[netK])}">${fmtSign(r[netK])}</td>
+      <td class="${dc(r[lots])}">${fmtSign(r[lots], 1)}</td>
+      <td class="neu">${fmt(r[vrKey], 2)}</td>
+      <td class="${dc(r.ma20_bias)}">${fmtSign(r.ma20_bias, 2)}</td>
+      ${hasForeign ? `
+      <td class="neu">${r.hold_ratio ? fmt(r.hold_ratio, 1)+'%' : '-'}</td>
+      <td class="neu">${r.hold_lots ? fmt(r.hold_lots) : '-'}</td>
+      <td class="neu">${r.hold_mktval ? fmt(r.hold_mktval, 1) : '-'}</td>
+      <td class="${dc(r.hold_chg)}">${r.hold_chg ? fmtSign(r.hold_chg, 2) : '-'}</td>` : ''}
+    </tr>`;
+  }
+
+  const body = rows.map(rowFn).join('');
+  return `<table id="tbl-${tid}"><thead>${cols}</thead><tbody>${body}</tbody></table>`;
 }
+
+// ── 同步 tables ──────────────────────────────────────────────────────────────
+
+function buildSyncTable(rows, sk) {
+  const isVol = sk.includes('_vol');
+  if (isVol) {
+    const entity = sk.startsWith('trust') ? '投信' : '外資';
+    const period = sk.endsWith('d1') ? '1' : '5';
+    const netK = period === '1' ? (entity === '投信' ? 'd1_trust_k' : 'd1_foreign_k')
+                                : (entity === '投信' ? 'd5_trust_k' : 'd5_foreign_k');
+    const lots = period === '1' ? (entity === '投信' ? 'd1_total_lots' : 'd1_total_lots')
+                                : (entity === '投信' ? 'd5_total_lots' : 'd5_total_lots');
+    const vrKey = sk.includes('trust') ? (period==='1' ? 'd1_trust_vr' : 'd5_trust_vr')
+                                       : (period==='1' ? 'd1_foreign_vr' : 'd5_foreign_vr');
+    const cols = `<tr>
+      ${th('排',0,'sync',true)} ${th('代號',1,'sync',true)} ${th('名稱',2,'sync',true)}
+      ${th('收盤',3,'sync')} ${th('漲跌%',4,'sync')}
+      ${th('量比%',5,'sync')} ${th(`${entity}買超(千元)`,6,'sync')} ${th('合計(張)',7,'sync')}
+    </tr>`;
+    const body = rows.map(r => `<tr data-search="${r.stock_id} ${r.stock_name}">
+      <td class="left rank">${r.rank}</td>
+      <td class="left sid">${r.stock_id}</td>
+      <td class="left name">${r.stock_name}</td>
+      <td class="price">${fmt(r.close, 2)}</td>
+      <td>${fmtSign(r.close_chg, 2)}</td>
+      <td class="vol">${fmt(r[vrKey], 2)}</td>
+      <td class="${dc(r[netK])}">${fmtSign(r[netK])}</td>
+      <td class="${dc(r.d1_total_lots)}">${fmtSign(r.d1_total_lots, 1)}</td>
+    </tr>`).join('');
+    return `<table id="tbl-sync"><thead>${cols}</thead><tbody>${body}</tbody></table>`;
+  }
+
+  const period = sk.startsWith('d1') ? '1' : '5';
+  const tK = period === '1' ? 'd1_trust_k'   : 'd5_trust_k';
+  const fK = period === '1' ? 'd1_foreign_k'  : 'd5_foreign_k';
+  const totK = period === '1' ? 'd1_total_k'  : 'd5_total_k';
+  const totL = period === '1' ? 'd1_total_lots': 'd5_total_lots';
+
+  const cols = `<tr>
+    ${th('排',0,'sync',true)} ${th('代號',1,'sync',true)} ${th('名稱',2,'sync',true)}
+    ${th('收盤',3,'sync')} ${th('漲跌%',4,'sync')}
+    ${th(`投信(千元)`,5,'sync')} ${th(`外資(千元)`,6,'sync')} ${th(`合計(千元)`,7,'sync')} ${th(`合計(張)`,8,'sync')}
+  </tr>`;
+  const body = rows.map(r => `<tr data-search="${r.stock_id} ${r.stock_name}">
+    <td class="left rank">${r.rank}</td>
+    <td class="left sid">${r.stock_id}</td>
+    <td class="left name">${r.stock_name}</td>
+    <td class="price">${fmt(r.close, 2)}</td>
+    <td>${fmtSign(r.close_chg, 2)}</td>
+    <td class="${dc(r[tK])}">${fmtSign(r[tK])}</td>
+    <td class="${dc(r[fK])}">${fmtSign(r[fK])}</td>
+    <td class="${dc(r[totK])}" style="font-weight:600">${fmtSign(r[totK])}</td>
+    <td class="${dc(r[totL])}">${fmtSign(r[totL], 1)}</td>
+  </tr>`).join('');
+  return `<table id="tbl-sync"><thead>${cols}</thead><tbody>${body}</tbody></table>`;
+}
+
+// ── render ────────────────────────────────────────────────────────────────────
+
+function render() {
+  const tab = TABS.find(t => t.key === curMain);
+  if (!tab) return;
+  const rows = tab.getData(D, curSub);
+  const html = tab.buildTable(rows || [], curSub);
+  document.getElementById('table-area').innerHTML = html;
+  updateCount();
+}
+
+function updateCount() {
+  const tbody = document.querySelector('#table-area tbody');
+  if (!tbody) return;
+  const rows = tbody.querySelectorAll('tr');
+  document.getElementById('count-badge').textContent = `共 ${rows.length} 筆`;
+}
+
+function buildNav() {
+  const mainNav = document.getElementById('main-nav');
+  mainNav.innerHTML = TABS.map(t =>
+    `<button onclick="switchMain('${t.key}',this)" class="${t.key===curMain?'active':''}">${t.label}</button>`
+  ).join('');
+}
+
+function buildSubNav() {
+  const tab = TABS.find(t => t.key === curMain);
+  const subNav = document.getElementById('sub-nav');
+  subNav.innerHTML = (tab.subs || []).map(s =>
+    `<button onclick="switchSub('${s.key}',this)" class="${s.key===curSub?'active':''}">${s.label}</button>`
+  ).join('');
+}
+
+function switchMain(key, btn) {
+  curMain = key;
+  const tab = TABS.find(t => t.key === key);
+  curSub = tab.subs[0].key;
+  document.querySelectorAll('.main-nav button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  buildSubNav();
+  document.getElementById('search-box').value = '';
+  sortState = {};
+  render();
+}
+
+function switchSub(key, btn) {
+  curSub = key;
+  document.querySelectorAll('.sub-nav button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('search-box').value = '';
+  sortState = {};
+  render();
+}
+
+// ── search ────────────────────────────────────────────────────────────────────
+
+function onSearch() {
+  const q = document.getElementById('search-box').value.toLowerCase();
+  const tbody = document.querySelector('#table-area tbody');
+  if (!tbody) return;
+  let vis = 0;
+  tbody.querySelectorAll('tr').forEach(row => {
+    const match = (row.dataset.search || '').toLowerCase().includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) vis++;
+  });
+  const total = tbody.querySelectorAll('tr').length;
+  document.getElementById('count-badge').textContent = q
+    ? `顯示 ${vis} / ${total} 筆`
+    : `共 ${total} 筆`;
+}
+
+// ── sort ──────────────────────────────────────────────────────────────────────
+
+function sortCol(tid, colIdx) {
+  const tbl = document.getElementById('tbl-' + tid);
+  if (!tbl) return;
+  const tbody = tbl.querySelector('tbody');
+  const rows  = Array.from(tbody.querySelectorAll('tr'));
+  const ths   = Array.from(tbl.querySelectorAll('thead th:not(.group)'));
+  const sk    = tid + colIdx;
+  const asc   = sortState[sk] !== true;
+  sortState[sk] = asc;
+  ths.forEach(t => t.classList.remove('sort-asc','sort-desc'));
+  if (ths[colIdx]) ths[colIdx].classList.add(asc ? 'sort-asc' : 'sort-desc');
+  rows.sort((a, b) => {
+    const av = (a.cells[colIdx]?.textContent || '').replace(/[,+%▲▼]/g,'').trim();
+    const bv = (b.cells[colIdx]?.textContent || '').replace(/[,+%▲▼]/g,'').trim();
+    const an = parseFloat(av), bn = parseFloat(bv);
+    if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+    return asc ? av.localeCompare(bv,'zh-TW') : bv.localeCompare(av,'zh-TW');
+  });
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+// ── load & trigger ────────────────────────────────────────────────────────────
 
 async function loadData() {
   try {
     const r = await fetch(DATA_URL + '?t=' + Date.now());
     if (!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    allData = d;
-
+    D = await r.json();
     document.getElementById('meta').textContent =
-      `資料日期：${d.date}　更新：${d.updated_at}`;
-
-    renderETF(d.etf?.items, d.etf?.summary);
-    renderTrust(d.trust);
-    renderForeign(d.foreign);
-    renderSync(d.sync);
-
+      `資料日期：${D.date}　更新：${D.updated_at}`;
     document.getElementById('loading').style.display = 'none';
-    document.querySelectorAll('.tab-content.active').forEach(el => {
-      el.style.display = 'block';
-    });
+    document.getElementById('app').style.display = 'block';
+    buildNav();
+    buildSubNav();
+    render();
   } catch (e) {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('error-msg').style.display = 'block';
     console.error(e);
   }
-}
-
-function switchTab(key, btn) {
-  document.querySelectorAll('.tab-content').forEach(el => {
-    el.style.display = 'none';
-    el.classList.remove('active');
-  });
-  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  const tab = document.getElementById('tab-' + key);
-  tab.style.display = 'block';
-  tab.classList.add('active');
-  btn.classList.add('active');
-}
-
-function filterTable(key) {
-  const q = document.getElementById('search-' + key).value.toLowerCase();
-  const rows = document.querySelectorAll(`#tbody-${key} tr`);
-  let visible = 0;
-  rows.forEach(row => {
-    const match = (row.dataset.search || '').toLowerCase().includes(q);
-    row.style.display = match ? '' : 'none';
-    if (match) visible++;
-  });
-  const countEl = document.getElementById('count-' + key);
-  if (countEl) {
-    countEl.textContent = q
-      ? `顯示 ${visible} / ${rows.length} 支`
-      : `共 ${rows.length} 支`;
-  }
-}
-
-function sortTable(key, colIdx) {
-  const tbody = document.getElementById('tbody-' + key);
-  const rows = Array.from(tbody.querySelectorAll('tr'));
-  const ths = document.querySelectorAll(`#table-${key} thead th:not(.group-header)`);
-  const stateKey = key + colIdx;
-  const asc = sortState[stateKey] !== true;
-  sortState[stateKey] = asc;
-
-  ths.forEach(t => t.classList.remove('sort-asc', 'sort-desc'));
-  if (ths[colIdx]) ths[colIdx].classList.add(asc ? 'sort-asc' : 'sort-desc');
-
-  rows.sort((a, b) => {
-    const av = a.cells[colIdx]?.textContent.replace(/,|%|\+/g, '') || '';
-    const bv = b.cells[colIdx]?.textContent.replace(/,|%|\+/g, '') || '';
-    const an = parseFloat(av), bn = parseFloat(bv);
-    if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
-    return asc ? av.localeCompare(bv, 'zh-TW') : bv.localeCompare(av, 'zh-TW');
-  });
-  rows.forEach(r => tbody.appendChild(r));
 }
 
 async function triggerUpdate() {
@@ -510,7 +576,7 @@ async function triggerUpdate() {
           'Authorization': `Bearer ${getToken()}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ref: 'main' }),
+        body: JSON.stringify({ref: 'main'}),
       }
     );
     if (resp.status === 204) {

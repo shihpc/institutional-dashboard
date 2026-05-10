@@ -8,9 +8,9 @@ on:
         required: false
         default: ''
   schedule:
-    - cron: '30 7 * * 1-5'  # 15:30 TW (UTC 07:30)
-    - cron: '0 8 * * 1-5'   # 16:00 TW (UTC 08:00) - FinMind 若延遲發布
-    - cron: '30 8 * * 1-5'  # 16:30 TW (UTC 08:30) - 最後補跑
+    - cron: '0 12 * * 1-5'   # 20:00 TW (UTC 12:00) - FinMind 法人資料更新時間
+    - cron: '30 12 * * 1-5'  # 20:30 TW (UTC 12:30) - 若稍晚發布
+    - cron: '0 13 * * 1-5'   # 21:00 TW (UTC 13:00) - 最後補跑
 
 permissions:
   contents: write

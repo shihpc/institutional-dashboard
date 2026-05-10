@@ -360,9 +360,9 @@ def build_sync_items(agg_d1, agg_d5, price_metrics, all_etf_ids, name_map):
 # ── 主程式 ────────────────────────────────────────────────────────
 
 def check_data_available(date):
-    """快速探測 FinMind 是否已發布當日法人資料（用 2330 當探針）"""
+    """快速探測 FinMind 是否已發布當日法人資料（用 2330 當探針，節省 API 用量）"""
     df = _get('TaiwanStockInstitutionalInvestorsBuySell',
-              {'start_date': date, 'end_date': date, 'stock_id': '2330'})
+              {'start_date': date, 'end_date': date, 'data_id': '2330'})
     if df.empty:
         return False
     if 'date' in df.columns:

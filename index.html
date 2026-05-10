@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>法人儀表板</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --cyan: #00d4ff;
+    --green: #3fb950;
+    --red: #f85149;
+    --yellow: #e3b341;
+    --text: #c9d1d9;
+    --muted: #8b949e;
+    --tab-active: #1f6feb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; font-size: 14px; }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header h1 { font-size: 18px; color: var(--cyan); letter-spacing: 1px; }
+  #meta { font-size: 12px; color: var(--muted); }
+  #refresh-btn {
+    background: var(--tab-active);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  #refresh-btn:hover { opacity: 0.85; }
+
+  nav {
+    display: flex;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  nav button {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px 8px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  nav button.active {
+    color: var(--cyan);
+    border-bottom-color: var(--cyan);
+  }
+  nav button:hover { color: var(--text); }
+
+  .tab-content { display: none; padding: 12px; }
+  .tab-content.active { display: block; }
+
+  .search-bar {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+  }
+  .search-bar input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .search-bar input:focus { outline: none; border-color: var(--cyan); }
+
+  .count-badge {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    background: var(--surface);
+    color: var(--muted);
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+  }
+  thead th:first-child, thead th:nth-child(2), thead th:nth-child(3) { text-align: left; }
+  thead th.sort-asc::after { content: ' ▲'; color: var(--cyan); }
+  thead th.sort-desc::after { content: ' ▼'; color: var(--cyan); }
+
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:hover { background: #1c2128; }
+  td { padding: 7px 10px; text-align: right; white-space: nowrap; }
+  td:first-child, td:nth-child(2) { text-align: left; }
+  td:nth-child(3) { text-align: left; color: var(--text); }
+
+  .rank { color: var(--muted); font-size: 12px; width: 36px; }
+  .stock-id { color: var(--cyan); font-weight: 600; min-width: 50px; }
+  .stock-name { color: var(--text); min-width: 90px; }
+  .close-price { color: var(--yellow); }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neutral { color: var(--muted); }
+  .vol { color: #a5d6ff; }
+
+  #loading {
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+  #error-msg {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: var(--red);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚡ 法人儀表板</h1>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span id="meta">載入中...</span>
+    <button id="refresh-btn" onclick="triggerUpdate()">手動更新</button>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="switchTab('etf', this)">ETF排行</button>
+  <button onclick="switchTab('trust', this)">投信買超</button>
+  <button onclick="switchTab('foreign', this)">外資買超</button>
+  <button onclick="switchTab('sync', this)">同步買超</button>
+</nav>
+
+<div id="loading">資料載入中...</div>
+<div id="error-msg">⚠️ 資料載入失敗，請稍後再試</div>
+
+<!-- ETF排行 -->
+<div id="tab-etf" class="tab-content active" style="display:none;">
+  <div class="search-bar">
+    <input type="text" id="search-etf" placeholder="搜尋代號或名稱..." oninput="filterTable('etf')">
+  </div>
+  <div id="count-etf" class="count-badge"></div>
+  <div class="table-wrap">
+    <table id="table-etf">
+      <thead>
+        <tr>
+          <th onclick="sortTable('etf',0)">排</th>
+          <th onclick="sortTable('etf',1)">代號</th>
+          <th onclick="sortTable('etf',2)">名稱</th>
+          <th onclick="sortTable('etf',3)">收盤</th>
+          <th onclick="sortTable('etf',4)">成交量(張)</th>
+          <th onclick="sortTable('etf',5)">外資買</th>
+          <th onclick="sortTable('etf',6)">外資賣</th>
+          <th onclick="sortTable('etf',7)">自營買</th>
+          <th onclick="sortTable('etf',8)">自營賣</th>
+          <th onclick="sortTable('etf',9)">投信買</th>
+          <th onclick="sortTable('etf',10)">投信賣</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-etf"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 投信買超 -->
+<div id="tab-trust" class="tab-content" style="display:none;">
+  <div class="search-bar">
+    <input type="text" id="search-trust" placeholder="搜尋代號或名稱..." oninput="filterTable('trust')">
+  </div>
+  <div id="count-trust" class="count-badge"></div>
+  <div class="table-wrap">
+    <table id="table-trust">
+      <thead>
+        <tr>
+          <th onclick="sortTable('trust',0)">排</th>
+          <th onclick="sortTable('trust',1)">代號</th>
+          <th onclick="sortTable('trust',2)">名稱</th>
+          <th onclick="sortTable('trust',3)">收盤</th>
+          <th onclick="sortTable('trust',4)">買(張)</th>
+          <th onclick="sortTable('trust',5)">賣(張)</th>
+          <th onclick="sortTable('trust',6)">買賣超(張)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-trust"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 外資買超 -->
+<div id="tab-foreign" class="tab-content" style="display:none;">
+  <div class="search-bar">
+    <input type="text" id="search-foreign" placeholder="搜尋代號或名稱..." oninput="filterTable('foreign')">
+  </div>
+  <div id="count-foreign" class="count-badge"></div>
+  <div class="table-wrap">
+    <table id="table-foreign">
+      <thead>
+        <tr>
+          <th onclick="sortTable('foreign',0)">排</th>
+          <th onclick="sortTable('foreign',1)">代號</th>
+          <th onclick="sortTable('foreign',2)">名稱</th>
+          <th onclick="sortTable('foreign',3)">收盤</th>
+          <th onclick="sortTable('foreign',4)">買(張)</th>
+          <th onclick="sortTable('foreign',5)">賣(張)</th>
+          <th onclick="sortTable('foreign',6)">買賣超(張)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-foreign"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 同步買超 -->
+<div id="tab-sync" class="tab-content" style="display:none;">
+  <div class="search-bar">
+    <input type="text" id="search-sync" placeholder="搜尋代號或名稱..." oninput="filterTable('sync')">
+  </div>
+  <div id="count-sync" class="count-badge"></div>
+  <div class="table-wrap">
+    <table id="table-sync">
+      <thead>
+        <tr>
+          <th onclick="sortTable('sync',0)">排</th>
+          <th onclick="sortTable('sync',1)">代號</th>
+          <th onclick="sortTable('sync',2)">名稱</th>
+          <th onclick="sortTable('sync',3)">收盤</th>
+          <th onclick="sortTable('sync',4)">投信買超(張)</th>
+          <th onclick="sortTable('sync',5)">外資買超(張)</th>
+          <th onclick="sortTable('sync',6)">合計(張)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-sync"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const GITHUB_OWNER = 'shihpc';
+const GITHUB_REPO  = 'institutional-dashboard';
+const DATA_URL     = 'data/etf.json';
+
+let allData = {};
+let sortState = {};
+
+function fmt(v, digits=0) {
+  if (v === null || v === undefined || isNaN(v)) return '-';
+  const n = Number(v);
+  if (digits === 0) return Math.round(n).toLocaleString();
+  return n.toFixed(digits);
+}
+
+function diffClass(v) {
+  if (v > 0) return 'pos';
+  if (v < 0) return 'neg';
+  return 'neutral';
+}
+
+function renderETF(data) {
+  const tbody = document.getElementById('tbody-etf');
+  tbody.innerHTML = data.map(r => `
+    <tr data-search="${r.stock_id} ${r.stock_name}">
+      <td class="rank">${r.rank}</td>
+      <td class="stock-id">${r.stock_id}</td>
+      <td class="stock-name">${r.stock_name}</td>
+      <td class="close-price">${fmt(r.close, 2)}</td>
+      <td class="vol">${fmt(r.volume)}</td>
+      <td class="${diffClass(r.foreign_buy - r.foreign_sell)}">${fmt(r.foreign_buy)}</td>
+      <td class="neg">${fmt(r.foreign_sell)}</td>
+      <td class="${diffClass(r.dealer_buy - r.dealer_sell)}">${fmt(r.dealer_buy)}</td>
+      <td class="neg">${fmt(r.dealer_sell)}</td>
+      <td class="${diffClass(r.trust_buy - r.trust_sell)}">${fmt(r.trust_buy)}</td>
+      <td class="neg">${fmt(r.trust_sell)}</td>
+    </tr>`).join('');
+  document.getElementById('count-etf').textContent = `共 ${data.length} 支 ETF`;
+}
+
+function renderEntity(key, data) {
+  const tbody = document.getElementById(`tbody-${key}`);
+  tbody.innerHTML = data.map(r => `
+    <tr data-search="${r.stock_id} ${r.stock_name}">
+      <td class="rank">${r.rank}</td>
+      <td class="stock-id">${r.stock_id}</td>
+      <td class="stock-name">${r.stock_name}</td>
+      <td class="close-price">${fmt(r.close, 2)}</td>
+      <td class="pos">${fmt(r.buy)}</td>
+      <td class="neg">${fmt(r.sell)}</td>
+      <td class="${diffClass(r.diff)}">${fmt(r.diff)}</td>
+    </tr>`).join('');
+  document.getElementById(`count-${key}`).textContent = `共 ${data.length} 支`;
+}
+
+function renderSync(data) {
+  const tbody = document.getElementById('tbody-sync');
+  tbody.innerHTML = data.map(r => `
+    <tr data-search="${r.stock_id} ${r.stock_name}">
+      <td class="rank">${r.rank}</td>
+      <td class="stock-id">${r.stock_id}</td>
+      <td class="stock-name">${r.stock_name}</td>
+      <td class="close-price">${fmt(r.close, 2)}</td>
+      <td class="pos">${fmt(r.trust_diff)}</td>
+      <td class="pos">${fmt(r.foreign_diff)}</td>
+      <td class="pos" style="font-weight:600">${fmt(r.total_diff)}</td>
+    </tr>`).join('');
+  document.getElementById('count-sync').textContent = `共 ${data.length} 支`;
+}
+
+async function loadData() {
+  try {
+    const r = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    allData = d;
+
+    document.getElementById('meta').textContent =
+      `資料日期：${d.date}　更新：${d.updated_at}`;
+
+    renderETF(d.master_etf || []);
+    renderEntity('trust', d.master_trust || []);
+    renderEntity('foreign', d.master_foreign || []);
+    renderSync(d.master_sync || []);
+
+    document.getElementById('loading').style.display = 'none';
+    document.querySelectorAll('.tab-content').forEach(el => {
+      if (el.classList.contains('active')) el.style.display = 'block';
+    });
+  } catch (e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'block';
+    console.error(e);
+  }
+}
+
+function switchTab(key, btn) {
+  document.querySelectorAll('.tab-content').forEach(el => {
+    el.style.display = 'none';
+    el.classList.remove('active');
+  });
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  const tab = document.getElementById('tab-' + key);
+  tab.style.display = 'block';
+  tab.classList.add('active');
+  btn.classList.add('active');
+}
+
+function filterTable(key) {
+  const q = document.getElementById('search-' + key).value.toLowerCase();
+  const rows = document.querySelectorAll(`#tbody-${key} tr`);
+  let visible = 0;
+  rows.forEach(row => {
+    const match = (row.dataset.search || '').toLowerCase().includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  const countEl = document.getElementById('count-' + key);
+  if (countEl) {
+    const total = rows.length;
+    countEl.textContent = q ? `顯示 ${visible} / ${total} 支` : `共 ${total} 支`;
+  }
+}
+
+function sortTable(key, colIdx) {
+  const tbody = document.getElementById('tbody-' + key);
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  const th = document.querySelectorAll(`#table-${key} thead th`)[colIdx];
+  const stateKey = key + colIdx;
+  const asc = sortState[stateKey] !== true;
+  sortState[stateKey] = asc;
+
+  document.querySelectorAll(`#table-${key} thead th`).forEach(t => {
+    t.classList.remove('sort-asc', 'sort-desc');
+  });
+  th.classList.add(asc ? 'sort-asc' : 'sort-desc');
+
+  rows.sort((a, b) => {
+    const av = a.cells[colIdx]?.textContent.replace(/,/g, '') || '';
+    const bv = b.cells[colIdx]?.textContent.replace(/,/g, '') || '';
+    const an = parseFloat(av), bn = parseFloat(bv);
+    if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+    return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+  });
+
+  rows.forEach(r => tbody.appendChild(r));
+}
+
+async function triggerUpdate() {
+  const btn = document.getElementById('refresh-btn');
+  btn.textContent = '觸發中...';
+  btn.disabled = true;
+
+  try {
+    const resp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/actions/workflows/etf.yml/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': `Bearer ${getToken()}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+    if (resp.status === 204) {
+      btn.textContent = '✅ 已觸發';
+      setTimeout(() => { btn.textContent = '手動更新'; btn.disabled = false; }, 3000);
+    } else {
+      throw new Error(resp.status);
+    }
+  } catch (e) {
+    btn.textContent = '❌ 失敗';
+    setTimeout(() => { btn.textContent = '手動更新'; btn.disabled = false; }, 3000);
+  }
+}
+
+function getToken() {
+  let t = localStorage.getItem('gh_token');
+  if (!t) {
+    t = prompt('請輸入 GitHub Personal Access Token\n(需有 workflow 權限，只存在本機)');
+    if (t) localStorage.setItem('gh_token', t);
+  }
+  return t || '';
+}
+
+loadData();
+</script>
+</body>
+</html>

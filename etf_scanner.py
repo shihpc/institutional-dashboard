@@ -359,6 +359,17 @@ def build_sync_items(agg_d1, agg_d5, price_metrics, all_etf_ids, name_map):
 
 # ── 主程式 ────────────────────────────────────────────────────────
 
+def check_data_available(date):
+    """快速探測 FinMind 是否已發布當日法人資料（用 2330 當探針）"""
+    df = _get('TaiwanStockInstitutionalInvestorsBuySell',
+              {'start_date': date, 'end_date': date, 'stock_id': '2330'})
+    if df.empty:
+        return False
+    if 'date' in df.columns:
+        return not df[df['date'].astype(str).str[:10] == date].empty
+    return True
+
+
 def main():
     log.info('=== 法人儀表板掃描開始 ===')
 
@@ -367,6 +378,15 @@ def main():
     dates_d5    = dates_all[-5:]
     date_latest = dates_all[-1]
     log.info(f'目標日期：{date_latest}，範圍：{dates_all[0]} ~ {date_latest}')
+
+    # 若目標日期是今天，先確認 FinMind 已發布資料
+    today_str = datetime.today().strftime('%Y-%m-%d')
+    if date_latest >= today_str:
+        log.info(f'檢查 FinMind 是否已發布 {date_latest} 資料...')
+        if not check_data_available(date_latest):
+            log.warning(f'FinMind 尚未發布 {date_latest} 法人資料，本次跳過（稍後重試）')
+            sys.exit(0)
+        log.info('資料已就緒，開始完整掃描')
 
     stock_df     = fetch_stock_list()
     inst_history = fetch_inst_history(dates_d10)

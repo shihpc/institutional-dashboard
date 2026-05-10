@@ -8,7 +8,9 @@ on:
         required: false
         default: ''
   schedule:
-    - cron: '30 7 * * 1-5'  # 週一到週五 15:30 台灣時間（UTC 07:30）
+    - cron: '30 7 * * 1-5'  # 15:30 TW (UTC 07:30)
+    - cron: '0 8 * * 1-5'   # 16:00 TW (UTC 08:00) - FinMind 若延遲發布
+    - cron: '30 8 * * 1-5'  # 16:30 TW (UTC 08:30) - 最後補跑
 
 permissions:
   contents: write

@@ -1,6 +1,6 @@
 {
   "date": "2026-06-09",
-  "updated_at": "2026-06-09 14:52:25",
+  "updated_at": "2026-06-09 15:33:26",
   "etf": {
     "volume": {
       "non_bond": [
@@ -1340,12 +1340,12 @@
           "vol_k": 3408,
           "money_b": 2.51,
           "mktval_b": 414.55,
-          "foreign_net_k": -45120,
-          "foreign_net_lots": -612.2,
-          "trust_net_k": 100000,
-          "trust_net_lots": 1356.9,
-          "dealer_net_k": -1500521,
-          "dealer_net_lots": -20359.9,
+          "foreign_net_k": 54880,
+          "foreign_net_lots": 744.6,
+          "trust_net_k": -1513521,
+          "trust_net_lots": -20536.2,
+          "dealer_net_k": -2959162,
+          "dealer_net_lots": -40151.5,
           "rank": 84
         },
         {
@@ -1406,10 +1406,10 @@
           "mktval_b": 117.06,
           "foreign_net_k": -257746,
           "foreign_net_lots": -14185.3,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -65152,
-          "dealer_net_lots": -3585.7,
+          "trust_net_k": -65152,
+          "trust_net_lots": -3585.7,
+          "dealer_net_k": -388050,
+          "dealer_net_lots": -21356.6,
           "rank": 88
         },
         {
@@ -1502,10 +1502,10 @@
           "mktval_b": 21.76,
           "foreign_net_k": -23000,
           "foreign_net_lots": -1905.6,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -256439,
-          "dealer_net_lots": -21246.0,
+          "trust_net_k": -256439,
+          "trust_net_lots": -21246.0,
+          "dealer_net_k": 114122,
+          "dealer_net_lots": 9455.0,
           "rank": 94
         },
         {
@@ -1854,10 +1854,10 @@
           "mktval_b": 68.6,
           "foreign_net_k": 31000,
           "foreign_net_lots": 1368.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -8370,
-          "dealer_net_lots": -369.4,
+          "trust_net_k": -87370,
+          "trust_net_lots": -3855.7,
+          "dealer_net_k": -64740,
+          "dealer_net_lots": -2857.0,
           "rank": 116
         },
         {
@@ -2421,22 +2421,6 @@
           "rank": 151
         },
         {
-          "stock_id": "00956",
-          "stock_name": "中信日經高股息",
-          "bond": false,
-          "close": 12.17,
-          "vol_k": 558,
-          "money_b": 0.07,
-          "mktval_b": 4.21,
-          "foreign_net_k": 171000,
-          "foreign_net_lots": 14050.9,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 46972,
-          "dealer_net_lots": 3859.7,
-          "rank": 152
-        },
-        {
           "stock_id": "00960",
           "stock_name": "野村全球航運龍頭",
           "bond": false,
@@ -2450,6 +2434,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 124136,
           "dealer_net_lots": 7021.3,
+          "rank": 152
+        },
+        {
+          "stock_id": "00956",
+          "stock_name": "中信日經高股息",
+          "bond": false,
+          "close": 12.17,
+          "vol_k": 558,
+          "money_b": 0.07,
+          "mktval_b": 4.21,
+          "foreign_net_k": 171000,
+          "foreign_net_lots": 14050.9,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 46972,
+          "dealer_net_lots": 3859.7,
           "rank": 153
         },
         {
@@ -3102,10 +3102,10 @@
           "mktval_b": 3.91,
           "foreign_net_k": 0,
           "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 23017,
-          "dealer_net_lots": 1127.2,
+          "trust_net_k": 23017,
+          "trust_net_lots": 1127.2,
+          "dealer_net_k": 46034,
+          "dealer_net_lots": 2254.4,
           "rank": 194
         },
         {
@@ -3125,22 +3125,6 @@
           "rank": 195
         },
         {
-          "stock_id": "00683L",
-          "stock_name": "期元大美元指正2",
-          "bond": false,
-          "close": 21.52,
-          "vol_k": 140,
-          "money_b": 0.03,
-          "mktval_b": 2.46,
-          "foreign_net_k": 24000,
-          "foreign_net_lots": 1115.2,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -58040,
-          "dealer_net_lots": -2697.0,
-          "rank": 196
-        },
-        {
           "stock_id": "009818",
           "stock_name": "華南永昌NASDAQxT",
           "bond": false,
@@ -3154,6 +3138,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 55992,
           "dealer_net_lots": 2887.7,
+          "rank": 196
+        },
+        {
+          "stock_id": "00683L",
+          "stock_name": "期元大美元指正2",
+          "bond": false,
+          "close": 21.52,
+          "vol_k": 140,
+          "money_b": 0.03,
+          "mktval_b": 2.46,
+          "foreign_net_k": 24000,
+          "foreign_net_lots": 1115.2,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -58040,
+          "dealer_net_lots": -2697.0,
           "rank": 197
         },
         {
@@ -3173,22 +3173,6 @@
           "rank": 198
         },
         {
-          "stock_id": "00645",
-          "stock_name": "富邦日本",
-          "bond": false,
-          "close": 54.8,
-          "vol_k": 137,
-          "money_b": 0.08,
-          "mktval_b": 24.93,
-          "foreign_net_k": 25017,
-          "foreign_net_lots": 456.5,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 845,
-          "dealer_net_lots": 15.4,
-          "rank": 199
-        },
-        {
           "stock_id": "00982T",
           "stock_name": "平衡兆豐台美動能",
           "bond": false,
@@ -3202,6 +3186,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 118949,
           "dealer_net_lots": 7739.0,
+          "rank": 199
+        },
+        {
+          "stock_id": "00645",
+          "stock_name": "富邦日本",
+          "bond": false,
+          "close": 54.8,
+          "vol_k": 137,
+          "money_b": 0.08,
+          "mktval_b": 24.93,
+          "foreign_net_k": 25017,
+          "foreign_net_lots": 456.5,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 845,
+          "dealer_net_lots": 15.4,
           "rank": 200
         },
         {
@@ -3445,22 +3445,6 @@
           "rank": 215
         },
         {
-          "stock_id": "00717",
-          "stock_name": "富邦美國特別股",
-          "bond": false,
-          "close": 14.93,
-          "vol_k": 66,
-          "money_b": 0.01,
-          "mktval_b": 19.13,
-          "foreign_net_k": 20000,
-          "foreign_net_lots": 1339.6,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -6000,
-          "dealer_net_lots": -401.9,
-          "rank": 216
-        },
-        {
           "stock_id": "006206",
           "stock_name": "元大上證50",
           "bond": false,
@@ -3474,6 +3458,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -27972,
           "dealer_net_lots": -786.6,
+          "rank": 216
+        },
+        {
+          "stock_id": "00717",
+          "stock_name": "富邦美國特別股",
+          "bond": false,
+          "close": 14.93,
+          "vol_k": 66,
+          "money_b": 0.01,
+          "mktval_b": 19.13,
+          "foreign_net_k": 20000,
+          "foreign_net_lots": 1339.6,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -6000,
+          "dealer_net_lots": -401.9,
           "rank": 217
         },
         {
@@ -3589,22 +3589,6 @@
           "rank": 224
         },
         {
-          "stock_id": "00647L",
-          "stock_name": "元大S&P500正2",
-          "bond": false,
-          "close": 131.45,
-          "vol_k": 39,
-          "money_b": 0.05,
-          "mktval_b": 8.43,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -22793,
-          "dealer_net_lots": -173.4,
-          "rank": 225
-        },
-        {
           "stock_id": "00771",
           "stock_name": "元大US高息特別股",
           "bond": false,
@@ -3618,6 +3602,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -20000,
           "dealer_net_lots": -1266.6,
+          "rank": 225
+        },
+        {
+          "stock_id": "00647L",
+          "stock_name": "元大S&P500正2",
+          "bond": false,
+          "close": 131.45,
+          "vol_k": 39,
+          "money_b": 0.05,
+          "mktval_b": 8.43,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -22793,
+          "dealer_net_lots": -173.4,
           "rank": 226
         },
         {
@@ -3845,22 +3845,6 @@
           "rank": 240
         },
         {
-          "stock_id": "00682U",
-          "stock_name": "期元大美元指數",
-          "bond": false,
-          "close": 20.36,
-          "vol_k": 6,
-          "money_b": 0.0,
-          "mktval_b": 1.56,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 5882,
-          "dealer_net_lots": 288.9,
-          "rank": 241
-        },
-        {
           "stock_id": "020028",
           "stock_name": "元大特選電動車N",
           "bond": false,
@@ -3874,6 +3858,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 6000,
           "dealer_net_lots": 288.2,
+          "rank": 241
+        },
+        {
+          "stock_id": "00682U",
+          "stock_name": "期元大美元指數",
+          "bond": false,
+          "close": 20.36,
+          "vol_k": 6,
+          "money_b": 0.0,
+          "mktval_b": 1.56,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 5882,
+          "dealer_net_lots": 288.9,
           "rank": 242
         },
         {
@@ -3941,6 +3941,22 @@
           "rank": 246
         },
         {
+          "stock_id": "020000",
+          "stock_name": "富邦特選蘋果N",
+          "bond": false,
+          "close": 33.28,
+          "vol_k": 2,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 2000,
+          "dealer_net_lots": 60.1,
+          "rank": 247
+        },
+        {
           "stock_id": "00684R",
           "stock_name": "期元大美元指反1",
           "bond": false,
@@ -3954,7 +3970,7 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 2000,
           "dealer_net_lots": 132.4,
-          "rank": 247
+          "rank": 248
         },
         {
           "stock_id": "020038",
@@ -3970,22 +3986,6 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -2000,
           "dealer_net_lots": -151.5,
-          "rank": 248
-        },
-        {
-          "stock_id": "020000",
-          "stock_name": "富邦特選蘋果N",
-          "bond": false,
-          "close": 33.28,
-          "vol_k": 2,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 2000,
-          "dealer_net_lots": 60.1,
           "rank": 249
         },
         {
@@ -4037,8 +4037,8 @@
           "rank": 252
         },
         {
-          "stock_id": "00643K",
-          "stock_name": "群益深証中小+R",
+          "stock_id": "020001",
+          "stock_name": "富邦存股雙十N",
           "bond": false,
           "close": 0.0,
           "vol_k": 0,
@@ -4053,24 +4053,8 @@
           "rank": 253
         },
         {
-          "stock_id": "00636K",
-          "stock_name": "國泰中國A50+U",
-          "bond": false,
-          "close": 8.98,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.01,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 254
-        },
-        {
-          "stock_id": "020011",
-          "stock_name": "統一微波高息20N",
+          "stock_id": "00643K",
+          "stock_name": "群益深証中小+R",
           "bond": false,
           "close": 0.0,
           "vol_k": 0,
@@ -4082,7 +4066,7 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 0,
           "dealer_net_lots": 0.0,
-          "rank": 255
+          "rank": 254
         },
         {
           "stock_id": "00707R",
@@ -4098,13 +4082,29 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 0,
           "dealer_net_lots": 0.0,
+          "rank": 255
+        },
+        {
+          "stock_id": "02001R",
+          "stock_name": "富邦蘋果反一N",
+          "bond": false,
+          "close": 0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
           "rank": 256
         },
         {
-          "stock_id": "00657K",
-          "stock_name": "國泰日經225+U",
+          "stock_id": "020011",
+          "stock_name": "統一微波高息20N",
           "bond": false,
-          "close": 24.2,
+          "close": 0.0,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -4117,8 +4117,8 @@
           "rank": 257
         },
         {
-          "stock_id": "020001",
-          "stock_name": "富邦存股雙十N",
+          "stock_id": "020040",
+          "stock_name": "元大上櫃ESG龍頭N",
           "bond": false,
           "close": 0.0,
           "vol_k": 0,
@@ -4165,10 +4165,10 @@
           "rank": 260
         },
         {
-          "stock_id": "02001R",
-          "stock_name": "富邦蘋果反一N",
+          "stock_id": "00657K",
+          "stock_name": "國泰日經225+U",
           "bond": false,
-          "close": 0,
+          "close": 24.2,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -4181,13 +4181,13 @@
           "rank": 261
         },
         {
-          "stock_id": "020040",
-          "stock_name": "元大上櫃ESG龍頭N",
+          "stock_id": "00636K",
+          "stock_name": "國泰中國A50+U",
           "bond": false,
-          "close": 0.0,
+          "close": 8.98,
           "vol_k": 0,
           "money_b": 0.0,
-          "mktval_b": 0.0,
+          "mktval_b": 0.01,
           "foreign_net_k": 0,
           "foreign_net_lots": 0.0,
           "trust_net_k": 0,
@@ -5127,22 +5127,6 @@
           "rank": 58
         },
         {
-          "stock_id": "00849B",
-          "stock_name": "中信EM主權債0-5",
-          "bond": true,
-          "close": 37.19,
-          "vol_k": 211,
-          "money_b": 0.08,
-          "mktval_b": 180.41,
-          "foreign_net_k": -7000,
-          "foreign_net_lots": -188.2,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 2624,
-          "dealer_net_lots": 70.6,
-          "rank": 59
-        },
-        {
           "stock_id": "00847B",
           "stock_name": "中信美國市政債",
           "bond": true,
@@ -5156,6 +5140,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -10000,
           "dealer_net_lots": -395.3,
+          "rank": 59
+        },
+        {
+          "stock_id": "00849B",
+          "stock_name": "中信EM主權債0-5",
+          "bond": true,
+          "close": 37.19,
+          "vol_k": 211,
+          "money_b": 0.08,
+          "mktval_b": 180.41,
+          "foreign_net_k": -7000,
+          "foreign_net_lots": -188.2,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 2624,
+          "dealer_net_lots": 70.6,
           "rank": 60
         },
         {
@@ -5511,22 +5511,6 @@
           "rank": 82
         },
         {
-          "stock_id": "00793B",
-          "stock_name": "群益AAA-A醫療債",
-          "bond": true,
-          "close": 30.83,
-          "vol_k": 102,
-          "money_b": 0.03,
-          "mktval_b": 1.09,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 83
-        },
-        {
           "stock_id": "00789B",
           "stock_name": "復華公司債A3",
           "bond": true,
@@ -5540,23 +5524,23 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 992,
           "dealer_net_lots": 20.6,
-          "rank": 84
+          "rank": 83
         },
         {
-          "stock_id": "00791B",
-          "stock_name": "復華信用債1-5",
+          "stock_id": "00793B",
+          "stock_name": "群益AAA-A醫療債",
           "bond": true,
-          "close": 56.45,
-          "vol_k": 101,
-          "money_b": 0.06,
-          "mktval_b": 157.83,
-          "foreign_net_k": -1000,
-          "foreign_net_lots": -17.7,
+          "close": 30.83,
+          "vol_k": 102,
+          "money_b": 0.03,
+          "mktval_b": 1.09,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
           "trust_net_k": 0,
           "trust_net_lots": 0.0,
-          "dealer_net_k": 1000,
-          "dealer_net_lots": 17.7,
-          "rank": 85
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 84
         },
         {
           "stock_id": "00695B",
@@ -5572,7 +5556,39 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -7133,
           "dealer_net_lots": -204.7,
+          "rank": 85
+        },
+        {
+          "stock_id": "00791B",
+          "stock_name": "復華信用債1-5",
+          "bond": true,
+          "close": 56.45,
+          "vol_k": 101,
+          "money_b": 0.06,
+          "mktval_b": 157.83,
+          "foreign_net_k": -1000,
+          "foreign_net_lots": -17.7,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 1000,
+          "dealer_net_lots": 17.7,
           "rank": 86
+        },
+        {
+          "stock_id": "00749B",
+          "stock_name": "凱基新興債10+",
+          "bond": true,
+          "close": 31.49,
+          "vol_k": 100,
+          "money_b": 0.03,
+          "mktval_b": 348.28,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 87
         },
         {
           "stock_id": "00840B",
@@ -5588,7 +5604,7 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 0,
           "dealer_net_lots": 0.0,
-          "rank": 87
+          "rank": 88
         },
         {
           "stock_id": "00841B",
@@ -5598,22 +5614,6 @@
           "vol_k": 100,
           "money_b": 0.03,
           "mktval_b": 20.31,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 88
-        },
-        {
-          "stock_id": "00749B",
-          "stock_name": "凱基新興債10+",
-          "bond": true,
-          "close": 31.49,
-          "vol_k": 100,
-          "money_b": 0.03,
-          "mktval_b": 348.28,
           "foreign_net_k": 0,
           "foreign_net_lots": 0.0,
           "trust_net_k": 0,
@@ -5911,10 +5911,10 @@
           "rank": 107
         },
         {
-          "stock_id": "00734B",
-          "stock_name": "台新JPM新興債",
+          "stock_id": "00883B",
+          "stock_name": "中信ESG投資級債",
           "bond": true,
-          "close": 0.0,
+          "close": 0,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -5927,10 +5927,10 @@
           "rank": 108
         },
         {
-          "stock_id": "00883B",
-          "stock_name": "中信ESG投資級債",
+          "stock_id": "00734B",
+          "stock_name": "台新JPM新興債",
           "bond": true,
-          "close": 0,
+          "close": 0.0,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -6370,12 +6370,12 @@
           "vol_k": 3408,
           "money_b": 2.51,
           "mktval_b": 414.55,
-          "foreign_net_k": -45120,
-          "foreign_net_lots": -612.2,
-          "trust_net_k": 100000,
-          "trust_net_lots": 1356.9,
-          "dealer_net_k": -1500521,
-          "dealer_net_lots": -20359.9,
+          "foreign_net_k": 54880,
+          "foreign_net_lots": 744.6,
+          "trust_net_k": -1513521,
+          "trust_net_lots": -20536.2,
+          "dealer_net_k": -2959162,
+          "dealer_net_lots": -40151.5,
           "rank": 27
         },
         {
@@ -6836,10 +6836,10 @@
           "mktval_b": 117.06,
           "foreign_net_k": -257746,
           "foreign_net_lots": -14185.3,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -65152,
-          "dealer_net_lots": -3585.7,
+          "trust_net_k": -65152,
+          "trust_net_lots": -3585.7,
+          "dealer_net_k": -388050,
+          "dealer_net_lots": -21356.6,
           "rank": 56
         },
         {
@@ -7236,10 +7236,10 @@
           "mktval_b": 68.6,
           "foreign_net_k": 31000,
           "foreign_net_lots": 1368.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -8370,
-          "dealer_net_lots": -369.4,
+          "trust_net_k": -87370,
+          "trust_net_lots": -3855.7,
+          "dealer_net_k": -64740,
+          "dealer_net_lots": -2857.0,
           "rank": 81
         },
         {
@@ -8036,10 +8036,10 @@
           "mktval_b": 21.76,
           "foreign_net_k": -23000,
           "foreign_net_lots": -1905.6,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -256439,
-          "dealer_net_lots": -21246.0,
+          "trust_net_k": -256439,
+          "trust_net_lots": -21246.0,
+          "dealer_net_k": 114122,
+          "dealer_net_lots": 9455.0,
           "rank": 131
         },
         {
@@ -9172,10 +9172,10 @@
           "mktval_b": 3.91,
           "foreign_net_k": 0,
           "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 23017,
-          "dealer_net_lots": 1127.2,
+          "trust_net_k": 23017,
+          "trust_net_lots": 1127.2,
+          "dealer_net_k": 46034,
+          "dealer_net_lots": 2254.4,
           "rank": 202
         },
         {
@@ -9259,22 +9259,6 @@
           "rank": 207
         },
         {
-          "stock_id": "00852L",
-          "stock_name": "國泰美國道瓊正2",
-          "bond": false,
-          "close": 32.94,
-          "vol_k": 133,
-          "money_b": 0.04,
-          "mktval_b": 2.92,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -33499,
-          "dealer_net_lots": -1017.0,
-          "rank": 208
-        },
-        {
           "stock_id": "00641R",
           "stock_name": "富邦日本反1",
           "bond": false,
@@ -9288,6 +9272,22 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -336300,
           "dealer_net_lots": -86230.8,
+          "rank": 208
+        },
+        {
+          "stock_id": "00852L",
+          "stock_name": "國泰美國道瓊正2",
+          "bond": false,
+          "close": 32.94,
+          "vol_k": 133,
+          "money_b": 0.04,
+          "mktval_b": 2.92,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -33499,
+          "dealer_net_lots": -1017.0,
           "rank": 209
         },
         {
@@ -9611,8 +9611,8 @@
           "rank": 229
         },
         {
-          "stock_id": "00643K",
-          "stock_name": "群益深証中小+R",
+          "stock_id": "020001",
+          "stock_name": "富邦存股雙十N",
           "bond": false,
           "close": 0.0,
           "vol_k": 0,
@@ -9627,324 +9627,20 @@
           "rank": 230
         },
         {
-          "stock_id": "020036",
-          "stock_name": "元大金融配息N",
+          "stock_id": "00643K",
+          "stock_name": "群益深証中小+R",
           "bond": false,
-          "close": 8.91,
-          "vol_k": 1,
+          "close": 0.0,
+          "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
           "foreign_net_k": 0,
           "foreign_net_lots": 0.0,
           "trust_net_k": 0,
           "trust_net_lots": 0.0,
-          "dealer_net_k": -1000,
-          "dealer_net_lots": -112.2,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
           "rank": 231
-        },
-        {
-          "stock_id": "01004T",
-          "stock_name": "土銀富邦R2",
-          "bond": false,
-          "close": 10.45,
-          "vol_k": 73,
-          "money_b": 0.01,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 232
-        },
-        {
-          "stock_id": "020035",
-          "stock_name": "元大上櫃ESG高息N",
-          "bond": false,
-          "close": 13.5,
-          "vol_k": 26,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 26000,
-          "dealer_net_lots": 1925.9,
-          "rank": 233
-        },
-        {
-          "stock_id": "01007T",
-          "stock_name": "兆豐國泰R2",
-          "bond": false,
-          "close": 12.63,
-          "vol_k": 55,
-          "money_b": 0.01,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 234
-        },
-        {
-          "stock_id": "020012",
-          "stock_name": "富邦行動通訊N",
-          "bond": false,
-          "close": 24.94,
-          "vol_k": 1,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 1000,
-          "dealer_net_lots": 40.1,
-          "rank": 235
-        },
-        {
-          "stock_id": "020038",
-          "stock_name": "元大ESG配息N",
-          "bond": false,
-          "close": 13.2,
-          "vol_k": 2,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -2000,
-          "dealer_net_lots": -151.5,
-          "rank": 236
-        },
-        {
-          "stock_id": "020031",
-          "stock_name": "統一IC設計臺灣N",
-          "bond": false,
-          "close": 10.46,
-          "vol_k": 255,
-          "money_b": 0.03,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -251000,
-          "dealer_net_lots": -23996.2,
-          "rank": 237
-        },
-        {
-          "stock_id": "01009T",
-          "stock_name": "王道圓滿R1",
-          "bond": false,
-          "close": 5.74,
-          "vol_k": 4,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 238
-        },
-        {
-          "stock_id": "020030",
-          "stock_name": "統一智慧電動車N",
-          "bond": false,
-          "close": 18.69,
-          "vol_k": 48,
-          "money_b": 0.01,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -24000,
-          "dealer_net_lots": -1284.1,
-          "rank": 239
-        },
-        {
-          "stock_id": "020029",
-          "stock_name": "元大ESG高股息N",
-          "bond": false,
-          "close": 18.0,
-          "vol_k": 51,
-          "money_b": 0.01,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 35000,
-          "dealer_net_lots": 1944.4,
-          "rank": 240
-        },
-        {
-          "stock_id": "020011",
-          "stock_name": "統一微波高息20N",
-          "bond": false,
-          "close": 0.0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 241
-        },
-        {
-          "stock_id": "020025",
-          "stock_name": "統一亞洲半導體N",
-          "bond": false,
-          "close": 39.99,
-          "vol_k": 50,
-          "money_b": 0.02,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 4000,
-          "dealer_net_lots": 100.0,
-          "rank": 242
-        },
-        {
-          "stock_id": "00707R",
-          "stock_name": "期元大S&P日圓反1",
-          "bond": false,
-          "close": 0.0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 243
-        },
-        {
-          "stock_id": "020033",
-          "stock_name": "統一恒生科期N",
-          "bond": false,
-          "close": 3.83,
-          "vol_k": 46,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -43000,
-          "dealer_net_lots": -11227.2,
-          "rank": 244
-        },
-        {
-          "stock_id": "020041",
-          "stock_name": "兆豐半導體氣候N",
-          "bond": false,
-          "close": 18.65,
-          "vol_k": 30,
-          "money_b": 0.01,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -24000,
-          "dealer_net_lots": -1286.9,
-          "rank": 245
-        },
-        {
-          "stock_id": "020020",
-          "stock_name": "元大台股領航N",
-          "bond": false,
-          "close": 28.9,
-          "vol_k": 4,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 2000,
-          "dealer_net_lots": 69.2,
-          "rank": 246
-        },
-        {
-          "stock_id": "00657K",
-          "stock_name": "國泰日經225+U",
-          "bond": false,
-          "close": 24.2,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 247
-        },
-        {
-          "stock_id": "020001",
-          "stock_name": "富邦存股雙十N",
-          "bond": false,
-          "close": 0.0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 248
-        },
-        {
-          "stock_id": "01002T",
-          "stock_name": "土銀國泰R1",
-          "bond": false,
-          "close": 14.08,
-          "vol_k": 19,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 249
-        },
-        {
-          "stock_id": "01001T",
-          "stock_name": "土銀富邦R1",
-          "bond": false,
-          "close": 11.6,
-          "vol_k": 5,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 250
         },
         {
           "stock_id": "020000",
@@ -9960,13 +9656,93 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 2000,
           "dealer_net_lots": 60.1,
-          "rank": 251
+          "rank": 232
         },
         {
-          "stock_id": "020027",
-          "stock_name": "元大上櫃ESG成長N",
+          "stock_id": "020041",
+          "stock_name": "兆豐半導體氣候N",
           "bond": false,
-          "close": 10.49,
+          "close": 18.65,
+          "vol_k": 30,
+          "money_b": 0.01,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -24000,
+          "dealer_net_lots": -1286.9,
+          "rank": 233
+        },
+        {
+          "stock_id": "01001T",
+          "stock_name": "土銀富邦R1",
+          "bond": false,
+          "close": 11.6,
+          "vol_k": 5,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 234
+        },
+        {
+          "stock_id": "00707R",
+          "stock_name": "期元大S&P日圓反1",
+          "bond": false,
+          "close": 0.0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 235
+        },
+        {
+          "stock_id": "02001R",
+          "stock_name": "富邦蘋果反一N",
+          "bond": false,
+          "close": 0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 236
+        },
+        {
+          "stock_id": "020011",
+          "stock_name": "統一微波高息20N",
+          "bond": false,
+          "close": 0.0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 237
+        },
+        {
+          "stock_id": "020036",
+          "stock_name": "元大金融配息N",
+          "bond": false,
+          "close": 8.91,
           "vol_k": 1,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -9974,9 +9750,137 @@
           "foreign_net_lots": 0.0,
           "trust_net_k": 0,
           "trust_net_lots": 0.0,
-          "dealer_net_k": 1000,
-          "dealer_net_lots": 95.3,
-          "rank": 252
+          "dealer_net_k": -1000,
+          "dealer_net_lots": -112.2,
+          "rank": 238
+        },
+        {
+          "stock_id": "020040",
+          "stock_name": "元大上櫃ESG龍頭N",
+          "bond": false,
+          "close": 0.0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 239
+        },
+        {
+          "stock_id": "020030",
+          "stock_name": "統一智慧電動車N",
+          "bond": false,
+          "close": 18.69,
+          "vol_k": 48,
+          "money_b": 0.01,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -24000,
+          "dealer_net_lots": -1284.1,
+          "rank": 240
+        },
+        {
+          "stock_id": "020028",
+          "stock_name": "元大特選電動車N",
+          "bond": false,
+          "close": 20.82,
+          "vol_k": 6,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 6000,
+          "dealer_net_lots": 288.2,
+          "rank": 241
+        },
+        {
+          "stock_id": "01002T",
+          "stock_name": "土銀國泰R1",
+          "bond": false,
+          "close": 14.08,
+          "vol_k": 19,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 242
+        },
+        {
+          "stock_id": "020029",
+          "stock_name": "元大ESG高股息N",
+          "bond": false,
+          "close": 18.0,
+          "vol_k": 51,
+          "money_b": 0.01,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 35000,
+          "dealer_net_lots": 1944.4,
+          "rank": 243
+        },
+        {
+          "stock_id": "00668K",
+          "stock_name": "國泰美國道瓊+U",
+          "bond": false,
+          "close": 18.57,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 244
+        },
+        {
+          "stock_id": "020037",
+          "stock_name": "元大金融高股息N",
+          "bond": false,
+          "close": 9.97,
+          "vol_k": 3,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -3000,
+          "dealer_net_lots": -300.9,
+          "rank": 245
+        },
+        {
+          "stock_id": "020035",
+          "stock_name": "元大上櫃ESG高息N",
+          "bond": false,
+          "close": 13.5,
+          "vol_k": 26,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 26000,
+          "dealer_net_lots": 1925.9,
+          "rank": 246
         },
         {
           "stock_id": "020039",
@@ -9992,6 +9896,102 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 125000,
           "dealer_net_lots": 8852.7,
+          "rank": 247
+        },
+        {
+          "stock_id": "020012",
+          "stock_name": "富邦行動通訊N",
+          "bond": false,
+          "close": 24.94,
+          "vol_k": 1,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 1000,
+          "dealer_net_lots": 40.1,
+          "rank": 248
+        },
+        {
+          "stock_id": "01004T",
+          "stock_name": "土銀富邦R2",
+          "bond": false,
+          "close": 10.45,
+          "vol_k": 73,
+          "money_b": 0.01,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 249
+        },
+        {
+          "stock_id": "00625K",
+          "stock_name": "富邦上証+R",
+          "bond": false,
+          "close": 0.0,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 250
+        },
+        {
+          "stock_id": "020025",
+          "stock_name": "統一亞洲半導體N",
+          "bond": false,
+          "close": 39.99,
+          "vol_k": 50,
+          "money_b": 0.02,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 4000,
+          "dealer_net_lots": 100.0,
+          "rank": 251
+        },
+        {
+          "stock_id": "020031",
+          "stock_name": "統一IC設計臺灣N",
+          "bond": false,
+          "close": 10.46,
+          "vol_k": 255,
+          "money_b": 0.03,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -251000,
+          "dealer_net_lots": -23996.2,
+          "rank": 252
+        },
+        {
+          "stock_id": "00657K",
+          "stock_name": "國泰日經225+U",
+          "bond": false,
+          "close": 24.2,
+          "vol_k": 0,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
           "rank": 253
         },
         {
@@ -10011,11 +10011,59 @@
           "rank": 254
         },
         {
-          "stock_id": "00668K",
-          "stock_name": "國泰美國道瓊+U",
+          "stock_id": "020033",
+          "stock_name": "統一恒生科期N",
           "bond": false,
-          "close": 18.57,
-          "vol_k": 0,
+          "close": 3.83,
+          "vol_k": 46,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -43000,
+          "dealer_net_lots": -11227.2,
+          "rank": 255
+        },
+        {
+          "stock_id": "020038",
+          "stock_name": "元大ESG配息N",
+          "bond": false,
+          "close": 13.2,
+          "vol_k": 2,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": -2000,
+          "dealer_net_lots": -151.5,
+          "rank": 256
+        },
+        {
+          "stock_id": "020027",
+          "stock_name": "元大上櫃ESG成長N",
+          "bond": false,
+          "close": 10.49,
+          "vol_k": 1,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 1000,
+          "dealer_net_lots": 95.3,
+          "rank": 257
+        },
+        {
+          "stock_id": "01009T",
+          "stock_name": "王道圓滿R1",
+          "bond": false,
+          "close": 5.74,
+          "vol_k": 4,
           "money_b": 0.0,
           "mktval_b": 0.0,
           "foreign_net_k": 0,
@@ -10024,7 +10072,39 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 0,
           "dealer_net_lots": 0.0,
-          "rank": 255
+          "rank": 258
+        },
+        {
+          "stock_id": "020020",
+          "stock_name": "元大台股領航N",
+          "bond": false,
+          "close": 28.9,
+          "vol_k": 4,
+          "money_b": 0.0,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 2000,
+          "dealer_net_lots": 69.2,
+          "rank": 259
+        },
+        {
+          "stock_id": "01007T",
+          "stock_name": "兆豐國泰R2",
+          "bond": false,
+          "close": 12.63,
+          "vol_k": 55,
+          "money_b": 0.01,
+          "mktval_b": 0.0,
+          "foreign_net_k": 0,
+          "foreign_net_lots": 0.0,
+          "trust_net_k": 0,
+          "trust_net_lots": 0.0,
+          "dealer_net_k": 0,
+          "dealer_net_lots": 0.0,
+          "rank": 260
         },
         {
           "stock_id": "020032",
@@ -10040,39 +10120,7 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": 12000,
           "dealer_net_lots": 1090.9,
-          "rank": 256
-        },
-        {
-          "stock_id": "020028",
-          "stock_name": "元大特選電動車N",
-          "bond": false,
-          "close": 20.82,
-          "vol_k": 6,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 6000,
-          "dealer_net_lots": 288.2,
-          "rank": 257
-        },
-        {
-          "stock_id": "00625K",
-          "stock_name": "富邦上証+R",
-          "bond": false,
-          "close": 0.0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 258
+          "rank": 261
         },
         {
           "stock_id": "02001L",
@@ -10088,54 +10136,6 @@
           "trust_net_lots": 0.0,
           "dealer_net_k": -25000,
           "dealer_net_lots": -147.4,
-          "rank": 259
-        },
-        {
-          "stock_id": "02001R",
-          "stock_name": "富邦蘋果反一N",
-          "bond": false,
-          "close": 0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 260
-        },
-        {
-          "stock_id": "020040",
-          "stock_name": "元大上櫃ESG龍頭N",
-          "bond": false,
-          "close": 0.0,
-          "vol_k": 0,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": 0,
-          "dealer_net_lots": 0.0,
-          "rank": 261
-        },
-        {
-          "stock_id": "020037",
-          "stock_name": "元大金融高股息N",
-          "bond": false,
-          "close": 9.97,
-          "vol_k": 3,
-          "money_b": 0.0,
-          "mktval_b": 0.0,
-          "foreign_net_k": 0,
-          "foreign_net_lots": 0.0,
-          "trust_net_k": 0,
-          "trust_net_lots": 0.0,
-          "dealer_net_k": -3000,
-          "dealer_net_lots": -300.9,
           "rank": 262
         }
       ],
@@ -11853,10 +11853,10 @@
           "rank": 107
         },
         {
-          "stock_id": "00734B",
-          "stock_name": "台新JPM新興債",
+          "stock_id": "00883B",
+          "stock_name": "中信ESG投資級債",
           "bond": true,
-          "close": 0.0,
+          "close": 0,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -11869,10 +11869,10 @@
           "rank": 108
         },
         {
-          "stock_id": "00883B",
-          "stock_name": "中信ESG投資級債",
+          "stock_id": "00734B",
+          "stock_name": "台新JPM新興債",
           "bond": true,
-          "close": 0,
+          "close": 0.0,
           "vol_k": 0,
           "money_b": 0.0,
           "mktval_b": 0.0,
@@ -11892,18 +11892,18 @@
         "vol_k": 4003932,
         "money_b": 1054.84,
         "mktval_b": 106846.89,
-        "foreign_net_k": -92827613,
-        "trust_net_k": 19526000,
-        "dealer_net_k": -113556699
+        "foreign_net_k": -92727613,
+        "trust_net_k": 17526535,
+        "dealer_net_k": -115001030
       },
       {
         "label": "非債券型",
         "vol_k": 3643809,
         "money_b": 979.96,
         "mktval_b": 77053.13,
-        "foreign_net_k": 58394695,
-        "trust_net_k": 19526000,
-        "dealer_net_k": -304396421
+        "foreign_net_k": 58494695,
+        "trust_net_k": 17526535,
+        "dealer_net_k": -305840752
       },
       {
         "label": "債券型",
@@ -12172,27 +12172,6 @@
           "rank": 12
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "ma20_bias": 10.89,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": 3593768,
-          "d1_lots": 42732.1,
-          "d1_vr": 583.51,
-          "d5_net_k": 18860692,
-          "d5_lots": 224265.1,
-          "d5_vr": 536.47,
-          "d20_net_k": 22281106,
-          "d20_lots": 264935.9,
-          "d20_vr": 370.1,
-          "rank": 13
-        },
-        {
           "stock_id": "1319",
           "stock_name": "東陽",
           "close": 105.0,
@@ -12211,7 +12190,7 @@
           "d20_net_k": 18034273,
           "d20_lots": 171755.0,
           "d20_vr": 134.81,
-          "rank": 14
+          "rank": 13
         },
         {
           "stock_id": "2330",
@@ -12232,7 +12211,7 @@
           "d20_net_k": 39394392,
           "d20_lots": 17090.8,
           "d20_vr": 2.05,
-          "rank": 15
+          "rank": 14
         },
         {
           "stock_id": "2379",
@@ -12253,7 +12232,7 @@
           "d20_net_k": 21174479,
           "d20_lots": 32526.1,
           "d20_vr": 27.61,
-          "rank": 16
+          "rank": 15
         },
         {
           "stock_id": "2327",
@@ -12274,7 +12253,7 @@
           "d20_net_k": 43672452,
           "d20_lots": 52872.2,
           "d20_vr": 5.67,
-          "rank": 17
+          "rank": 16
         },
         {
           "stock_id": "9910",
@@ -12295,7 +12274,7 @@
           "d20_net_k": 22515474,
           "d20_lots": 260897.7,
           "d20_vr": 251.04,
-          "rank": 18
+          "rank": 17
         },
         {
           "stock_id": "2880",
@@ -12316,7 +12295,7 @@
           "d20_net_k": 311664316,
           "d20_lots": 8791659.1,
           "d20_vr": 774.8,
-          "rank": 19
+          "rank": 18
         },
         {
           "stock_id": "2368",
@@ -12337,6 +12316,27 @@
           "d20_net_k": -799333,
           "d20_lots": -534.7,
           "d20_vr": 0.41,
+          "rank": 19
+        },
+        {
+          "stock_id": "2408",
+          "stock_name": "南亞科",
+          "close": 363.0,
+          "close_chg": 6.92,
+          "ma20_bias": 8.78,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": 1825381,
+          "d1_lots": 5028.6,
+          "d1_vr": 5.04,
+          "d5_net_k": 2386085,
+          "d5_lots": 6573.2,
+          "d5_vr": 1.11,
+          "d20_net_k": -7188818,
+          "d20_lots": -19803.9,
+          "d20_vr": 0.68,
           "rank": 20
         }
       ],
@@ -12426,27 +12426,6 @@
           "rank": 4
         },
         {
-          "stock_id": "2618",
-          "stock_name": "長榮航",
-          "close": 37.0,
-          "close_chg": 1.65,
-          "ma20_bias": 3.32,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
-          "rank": 5
-        },
-        {
           "stock_id": "5347",
           "stock_name": "世界",
           "close": 161.0,
@@ -12465,7 +12444,7 @@
           "d20_net_k": -32525271,
           "d20_lots": -202020.3,
           "d20_vr": 21.9,
-          "rank": 6
+          "rank": 5
         },
         {
           "stock_id": "3036",
@@ -12486,7 +12465,7 @@
           "d20_net_k": -43298728,
           "d20_lots": -173194.9,
           "d20_vr": 59.26,
-          "rank": 7
+          "rank": 6
         },
         {
           "stock_id": "6005",
@@ -12507,7 +12486,7 @@
           "d20_net_k": -40009660,
           "d20_lots": -984247.5,
           "d20_vr": 238.62,
-          "rank": 8
+          "rank": 7
         },
         {
           "stock_id": "3702",
@@ -12528,7 +12507,7 @@
           "d20_net_k": -45460839,
           "d20_lots": -411410.3,
           "d20_vr": 133.9,
-          "rank": 9
+          "rank": 8
         },
         {
           "stock_id": "6176",
@@ -12549,7 +12528,7 @@
           "d20_net_k": -35641961,
           "d20_lots": -388256.7,
           "d20_vr": 221.81,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "8070",
@@ -12570,7 +12549,7 @@
           "d20_net_k": -31799458,
           "d20_lots": -535344.4,
           "d20_vr": 207.46,
-          "rank": 11
+          "rank": 10
         },
         {
           "stock_id": "6239",
@@ -12591,7 +12570,7 @@
           "d20_net_k": -35477298,
           "d20_lots": -110521.2,
           "d20_vr": 19.28,
-          "rank": 12
+          "rank": 11
         },
         {
           "stock_id": "6147",
@@ -12612,7 +12591,7 @@
           "d20_net_k": 18743576,
           "d20_lots": 74675.6,
           "d20_vr": 5.93,
-          "rank": 13
+          "rank": 12
         },
         {
           "stock_id": "2603",
@@ -12633,7 +12612,7 @@
           "d20_net_k": 83420064,
           "d20_lots": 375766.1,
           "d20_vr": 69.98,
-          "rank": 14
+          "rank": 13
         },
         {
           "stock_id": "1802",
@@ -12654,7 +12633,7 @@
           "d20_net_k": 302000,
           "d20_lots": 4793.7,
           "d20_vr": 0.23,
-          "rank": 15
+          "rank": 14
         },
         {
           "stock_id": "8422",
@@ -12675,7 +12654,7 @@
           "d20_net_k": -26415000,
           "d20_lots": -892398.6,
           "d20_vr": 400.19,
-          "rank": 16
+          "rank": 15
         },
         {
           "stock_id": "6757",
@@ -12696,7 +12675,7 @@
           "d20_net_k": -20220000,
           "d20_lots": -383681.2,
           "d20_vr": 699.7,
-          "rank": 17
+          "rank": 16
         },
         {
           "stock_id": "6278",
@@ -12717,7 +12696,7 @@
           "d20_net_k": 20480,
           "d20_lots": 103.2,
           "d20_vr": 0.03,
-          "rank": 18
+          "rank": 17
         },
         {
           "stock_id": "2451",
@@ -12738,7 +12717,7 @@
           "d20_net_k": -15320947,
           "d20_lots": -50068.5,
           "d20_vr": 29.38,
-          "rank": 19
+          "rank": 18
         },
         {
           "stock_id": "6412",
@@ -12759,6 +12738,27 @@
           "d20_net_k": -14600333,
           "d20_lots": -164233.2,
           "d20_vr": 189.71,
+          "rank": 19
+        },
+        {
+          "stock_id": "2481",
+          "stock_name": "強茂",
+          "close": 146.0,
+          "close_chg": -1.68,
+          "ma20_bias": 2.93,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": -2163000,
+          "d1_lots": -14815.1,
+          "d1_vr": 36.46,
+          "d5_net_k": 2398000,
+          "d5_lots": 16424.7,
+          "d5_vr": 7.44,
+          "d20_net_k": 31780000,
+          "d20_lots": 217671.2,
+          "d20_vr": 19.21,
           "rank": 20
         }
       ],
@@ -12911,27 +12911,6 @@
           "rank": 7
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "ma20_bias": 10.89,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": 3593768,
-          "d1_lots": 42732.1,
-          "d1_vr": 583.51,
-          "d5_net_k": 18860692,
-          "d5_lots": 224265.1,
-          "d5_vr": 536.47,
-          "d20_net_k": 22281106,
-          "d20_lots": 264935.9,
-          "d20_vr": 370.1,
-          "rank": 8
-        },
-        {
           "stock_id": "4938",
           "stock_name": "和碩",
           "close": 95.1,
@@ -12950,7 +12929,7 @@
           "d20_net_k": 92345268,
           "d20_lots": 971033.3,
           "d20_vr": 184.14,
-          "rank": 9
+          "rank": 8
         },
         {
           "stock_id": "5871",
@@ -12971,7 +12950,7 @@
           "d20_net_k": 69151421,
           "d20_lots": 578673.0,
           "d20_vr": 208.86,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "9910",
@@ -12992,7 +12971,7 @@
           "d20_net_k": 22515474,
           "d20_lots": 260897.7,
           "d20_vr": 251.04,
-          "rank": 11
+          "rank": 10
         },
         {
           "stock_id": "2597",
@@ -13013,7 +12992,7 @@
           "d20_net_k": 10813000,
           "d20_lots": 56612.6,
           "d20_vr": 176.64,
-          "rank": 12
+          "rank": 11
         },
         {
           "stock_id": "1319",
@@ -13034,7 +13013,7 @@
           "d20_net_k": 18034273,
           "d20_lots": 171755.0,
           "d20_vr": 134.81,
-          "rank": 13
+          "rank": 12
         },
         {
           "stock_id": "2881",
@@ -13055,7 +13034,7 @@
           "d20_net_k": -174416900,
           "d20_lots": -1395335.2,
           "d20_vr": 104.1,
-          "rank": 14
+          "rank": 13
         },
         {
           "stock_id": "6890",
@@ -13076,7 +13055,7 @@
           "d20_net_k": 9931000,
           "d20_lots": 36244.5,
           "d20_vr": 94.57,
-          "rank": 15
+          "rank": 14
         },
         {
           "stock_id": "2880",
@@ -13097,7 +13076,7 @@
           "d20_net_k": 311664316,
           "d20_lots": 8791659.1,
           "d20_vr": 774.8,
-          "rank": 16
+          "rank": 15
         },
         {
           "stock_id": "2015",
@@ -13118,7 +13097,7 @@
           "d20_net_k": -132000,
           "d20_lots": -2132.5,
           "d20_vr": 30.02,
-          "rank": 17
+          "rank": 16
         },
         {
           "stock_id": "2887",
@@ -13139,7 +13118,7 @@
           "d20_net_k": 433146964,
           "d20_lots": 14658103.7,
           "d20_vr": 474.98,
-          "rank": 18
+          "rank": 17
         },
         {
           "stock_id": "8454",
@@ -13160,7 +13139,7 @@
           "d20_net_k": 7530332,
           "d20_lots": 17656.1,
           "d20_vr": 33.38,
-          "rank": 19
+          "rank": 18
         },
         {
           "stock_id": "2379",
@@ -13181,6 +13160,27 @@
           "d20_net_k": 21174479,
           "d20_lots": 32526.1,
           "d20_vr": 27.61,
+          "rank": 19
+        },
+        {
+          "stock_id": "2353",
+          "stock_name": "宏碁",
+          "close": 36.95,
+          "close_chg": 4.67,
+          "ma20_bias": 11.64,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": 992000,
+          "d1_lots": 26847.1,
+          "d1_vr": 54.14,
+          "d5_net_k": 10372304,
+          "d5_lots": 280711.9,
+          "d5_vr": 39.71,
+          "d20_net_k": -6516372,
+          "d20_lots": -176356.5,
+          "d20_vr": 10.95,
           "rank": 20
         }
       ],
@@ -13249,24 +13249,24 @@
           "rank": 3
         },
         {
-          "stock_id": "2618",
-          "stock_name": "長榮航",
-          "close": 37.0,
-          "close_chg": 1.65,
-          "ma20_bias": 3.32,
+          "stock_id": "1464",
+          "stock_name": "得力",
+          "close": 10.35,
+          "close_chg": -0.48,
+          "ma20_bias": 1.1,
           "hold_ratio": 0.0,
           "hold_lots": 0,
           "hold_mktval": 0.0,
           "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
+          "d1_net_k": -40000,
+          "d1_lots": -3864.7,
+          "d1_vr": 656.73,
+          "d5_net_k": -40000,
+          "d5_lots": -3864.7,
+          "d5_vr": 93.31,
+          "d20_net_k": -40000,
+          "d20_lots": -3864.7,
+          "d20_vr": 30.88,
           "rank": 4
         },
         {
@@ -13757,6 +13757,27 @@
           "rank": 7
         },
         {
+          "stock_id": "2618",
+          "stock_name": "長榮航",
+          "close": 37.0,
+          "close_chg": 1.65,
+          "ma20_bias": 3.32,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": 109475,
+          "d1_lots": 2958.8,
+          "d1_vr": 7.95,
+          "d5_net_k": 50397301,
+          "d5_lots": 1362089.2,
+          "d5_vr": 505.35,
+          "d20_net_k": 253305013,
+          "d20_lots": 6846081.4,
+          "d20_vr": 625.04,
+          "rank": 8
+        },
+        {
           "stock_id": "2542",
           "stock_name": "興富發",
           "close": 43.2,
@@ -13775,7 +13796,7 @@
           "d20_net_k": 62618600,
           "d20_lots": 1449504.6,
           "d20_vr": 462.81,
-          "rank": 8
+          "rank": 9
         },
         {
           "stock_id": "2855",
@@ -13796,7 +13817,7 @@
           "d20_net_k": 55288605,
           "d20_lots": 1023863.1,
           "d20_vr": 329.47,
-          "rank": 9
+          "rank": 10
         },
         {
           "stock_id": "5871",
@@ -13817,27 +13838,6 @@
           "d20_net_k": 69151421,
           "d20_lots": 578673.0,
           "d20_vr": 208.86,
-          "rank": 10
-        },
-        {
-          "stock_id": "2618",
-          "stock_name": "長榮航",
-          "close": 37.0,
-          "close_chg": 1.65,
-          "ma20_bias": 3.32,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
           "rank": 11
         },
         {
@@ -13946,27 +13946,6 @@
           "rank": 16
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "ma20_bias": 10.89,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": 3593768,
-          "d1_lots": 42732.1,
-          "d1_vr": 583.51,
-          "d5_net_k": 18860692,
-          "d5_lots": 224265.1,
-          "d5_vr": 536.47,
-          "d20_net_k": 22281106,
-          "d20_lots": 264935.9,
-          "d20_vr": 370.1,
-          "rank": 17
-        },
-        {
           "stock_id": "9910",
           "stock_name": "豐泰",
           "close": 86.3,
@@ -13985,7 +13964,7 @@
           "d20_net_k": 22515474,
           "d20_lots": 260897.7,
           "d20_vr": 251.04,
-          "rank": 18
+          "rank": 17
         },
         {
           "stock_id": "1319",
@@ -14006,7 +13985,7 @@
           "d20_net_k": 18034273,
           "d20_lots": 171755.0,
           "d20_vr": 134.81,
-          "rank": 19
+          "rank": 18
         },
         {
           "stock_id": "2356",
@@ -14027,6 +14006,27 @@
           "d20_net_k": 82121603,
           "d20_lots": 1163195.5,
           "d20_vr": 48.33,
+          "rank": 19
+        },
+        {
+          "stock_id": "9941",
+          "stock_name": "裕融",
+          "close": 84.1,
+          "close_chg": 1.33,
+          "ma20_bias": 10.89,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": -44000,
+          "d1_lots": -523.2,
+          "d1_vr": 7.14,
+          "d5_net_k": 15222924,
+          "d5_lots": 181009.8,
+          "d5_vr": 433.0,
+          "d20_net_k": 18643338,
+          "d20_lots": 221680.6,
+          "d20_vr": 309.67,
           "rank": 20
         }
       ],
@@ -14622,27 +14622,6 @@
           "rank": 8
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "ma20_bias": 10.89,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": 3593768,
-          "d1_lots": 42732.1,
-          "d1_vr": 583.51,
-          "d5_net_k": 18860692,
-          "d5_lots": 224265.1,
-          "d5_vr": 536.47,
-          "d20_net_k": 22281106,
-          "d20_lots": 264935.9,
-          "d20_vr": 370.1,
-          "rank": 9
-        },
-        {
           "stock_id": "2855",
           "stock_name": "統一證",
           "close": 54.0,
@@ -14661,7 +14640,7 @@
           "d20_net_k": 55288605,
           "d20_lots": 1023863.1,
           "d20_vr": 329.47,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "2618",
@@ -14673,15 +14652,36 @@
           "hold_lots": 0,
           "hold_mktval": 0.0,
           "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
+          "d1_net_k": 109475,
+          "d1_lots": 2958.8,
+          "d1_vr": 7.95,
+          "d5_net_k": 50397301,
+          "d5_lots": 1362089.2,
+          "d5_vr": 505.35,
+          "d20_net_k": 253305013,
+          "d20_lots": 6846081.4,
+          "d20_vr": 625.04,
+          "rank": 10
+        },
+        {
+          "stock_id": "9941",
+          "stock_name": "裕融",
+          "close": 84.1,
+          "close_chg": 1.33,
+          "ma20_bias": 10.89,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": -44000,
+          "d1_lots": -523.2,
+          "d1_vr": 7.14,
+          "d5_net_k": 15222924,
+          "d5_lots": 181009.8,
+          "d5_vr": 433.0,
+          "d20_net_k": 18643338,
+          "d20_lots": 221680.6,
+          "d20_vr": 309.67,
           "rank": 11
         },
         {
@@ -15372,15 +15372,15 @@
           "hold_lots": 0,
           "hold_mktval": 0.0,
           "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
+          "d1_net_k": 109475,
+          "d1_lots": 2958.8,
+          "d1_vr": 7.95,
+          "d5_net_k": 50397301,
+          "d5_lots": 1362089.2,
+          "d5_vr": 505.35,
+          "d20_net_k": 253305013,
+          "d20_lots": 6846081.4,
+          "d20_vr": 625.04,
           "rank": 4
         },
         {
@@ -16207,6 +16207,27 @@
           "rank": 3
         },
         {
+          "stock_id": "2618",
+          "stock_name": "長榮航",
+          "close": 37.0,
+          "close_chg": 1.65,
+          "ma20_bias": 3.32,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": 109475,
+          "d1_lots": 2958.8,
+          "d1_vr": 7.95,
+          "d5_net_k": 50397301,
+          "d5_lots": 1362089.2,
+          "d5_vr": 505.35,
+          "d20_net_k": 253305013,
+          "d20_lots": 6846081.4,
+          "d20_vr": 625.04,
+          "rank": 4
+        },
+        {
           "stock_id": "1210",
           "stock_name": "大成",
           "close": 54.5,
@@ -16225,27 +16246,6 @@
           "d20_net_k": 30843000,
           "d20_lots": 565926.6,
           "d20_vr": 620.68,
-          "rank": 4
-        },
-        {
-          "stock_id": "2618",
-          "stock_name": "長榮航",
-          "close": 37.0,
-          "close_chg": 1.65,
-          "ma20_bias": 3.32,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": -7431620,
-          "d1_lots": -200854.6,
-          "d1_vr": 539.75,
-          "d5_net_k": 42856206,
-          "d5_lots": 1158275.8,
-          "d5_vr": 429.73,
-          "d20_net_k": 245763918,
-          "d20_lots": 6642268.1,
-          "d20_vr": 606.44,
           "rank": 5
         },
         {
@@ -16291,27 +16291,6 @@
           "rank": 7
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "ma20_bias": 10.89,
-          "hold_ratio": 0.0,
-          "hold_lots": 0,
-          "hold_mktval": 0.0,
-          "hold_chg": 0.0,
-          "d1_net_k": 3593768,
-          "d1_lots": 42732.1,
-          "d1_vr": 583.51,
-          "d5_net_k": 18860692,
-          "d5_lots": 224265.1,
-          "d5_vr": 536.47,
-          "d20_net_k": 22281106,
-          "d20_lots": 264935.9,
-          "d20_vr": 370.1,
-          "rank": 8
-        },
-        {
           "stock_id": "2886",
           "stock_name": "兆豐金",
           "close": 43.55,
@@ -16330,7 +16309,7 @@
           "d20_net_k": 119628081,
           "d20_lots": 2746913.5,
           "d20_vr": 335.45,
-          "rank": 9
+          "rank": 8
         },
         {
           "stock_id": "2855",
@@ -16351,7 +16330,7 @@
           "d20_net_k": 55288605,
           "d20_lots": 1023863.1,
           "d20_vr": 329.47,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "2347",
@@ -16372,6 +16351,27 @@
           "d20_net_k": 48974178,
           "d20_lots": 538177.8,
           "d20_vr": 328.29,
+          "rank": 10
+        },
+        {
+          "stock_id": "9941",
+          "stock_name": "裕融",
+          "close": 84.1,
+          "close_chg": 1.33,
+          "ma20_bias": 10.89,
+          "hold_ratio": 0.0,
+          "hold_lots": 0,
+          "hold_mktval": 0.0,
+          "hold_chg": 0.0,
+          "d1_net_k": -44000,
+          "d1_lots": -523.2,
+          "d1_vr": 7.14,
+          "d5_net_k": 15222924,
+          "d5_lots": 181009.8,
+          "d5_vr": 433.0,
+          "d20_net_k": 18643338,
+          "d20_lots": 221680.6,
+          "d20_vr": 309.67,
           "rank": 11
         },
         {
@@ -19293,6 +19293,27 @@
           "rank": 9
         },
         {
+          "stock_id": "2618",
+          "stock_name": "長榮航",
+          "close": 37.0,
+          "close_chg": 1.65,
+          "ma20_bias": 3.32,
+          "hold_ratio": 19.32,
+          "hold_lots": 1043422,
+          "hold_mktval": 38606.6,
+          "hold_chg": -17.75,
+          "d1_net_k": -2432321,
+          "d1_lots": -65738.4,
+          "d1_vr": 176.66,
+          "d5_net_k": -73350774,
+          "d5_lots": -1982453.4,
+          "d5_vr": 735.51,
+          "d20_net_k": -266913334,
+          "d20_lots": -7213873.9,
+          "d20_vr": 658.62,
+          "rank": 10
+        },
+        {
           "stock_id": "3231",
           "stock_name": "緯創",
           "close": 165.5,
@@ -19311,27 +19332,6 @@
           "d20_net_k": 95865892,
           "d20_lots": 579250.1,
           "d20_vr": 37.91,
-          "rank": 10
-        },
-        {
-          "stock_id": "2618",
-          "stock_name": "長榮航",
-          "close": 37.0,
-          "close_chg": 1.65,
-          "ma20_bias": 3.32,
-          "hold_ratio": 19.32,
-          "hold_lots": 1043422,
-          "hold_mktval": 38606.6,
-          "hold_chg": -17.75,
-          "d1_net_k": 4999299,
-          "d1_lots": 135116.2,
-          "d1_vr": 363.09,
-          "d5_net_k": -65919154,
-          "d5_lots": -1781598.8,
-          "d5_vr": 660.99,
-          "d20_net_k": -259481714,
-          "d20_lots": -7013019.3,
-          "d20_vr": 640.29,
           "rank": 11
         },
         {
@@ -20866,15 +20866,15 @@
           "hold_lots": 1043422,
           "hold_mktval": 38606.6,
           "hold_chg": -17.75,
-          "d1_net_k": 4999299,
-          "d1_lots": 135116.2,
-          "d1_vr": 363.09,
-          "d5_net_k": -65919154,
-          "d5_lots": -1781598.8,
-          "d5_vr": 660.99,
-          "d20_net_k": -259481714,
-          "d20_lots": -7013019.3,
-          "d20_vr": 640.29,
+          "d1_net_k": -2432321,
+          "d1_lots": -65738.4,
+          "d1_vr": 176.66,
+          "d5_net_k": -73350774,
+          "d5_lots": -1982453.4,
+          "d5_vr": 735.51,
+          "d20_net_k": -266913334,
+          "d20_lots": -7213873.9,
+          "d20_vr": 658.62,
           "rank": 4
         },
         {
@@ -23729,25 +23729,6 @@
           "rank": 7
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "d1_trust_k": 3593768,
-          "d1_foreign_k": -830839,
-          "d1_total_k": 2762929,
-          "d1_total_lots": 32852.9,
-          "d5_trust_k": 18860692,
-          "d5_foreign_k": -12466460,
-          "d5_total_k": 6394232,
-          "d5_total_lots": 76031.3,
-          "d1_trust_vr": 583.51,
-          "d1_foreign_vr": 134.9,
-          "d5_trust_vr": 536.47,
-          "d5_foreign_vr": 354.6,
-          "rank": 8
-        },
-        {
           "stock_id": "4938",
           "stock_name": "和碩",
           "close": 95.1,
@@ -23764,7 +23745,7 @@
           "d1_foreign_vr": 468.94,
           "d5_trust_vr": 348.28,
           "d5_foreign_vr": 364.13,
-          "rank": 9
+          "rank": 8
         },
         {
           "stock_id": "5871",
@@ -23783,7 +23764,7 @@
           "d1_foreign_vr": 181.07,
           "d5_trust_vr": 339.42,
           "d5_foreign_vr": 226.38,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "9910",
@@ -23802,7 +23783,7 @@
           "d1_foreign_vr": 134.91,
           "d5_trust_vr": 382.52,
           "d5_foreign_vr": 402.3,
-          "rank": 11
+          "rank": 10
         },
         {
           "stock_id": "2597",
@@ -23821,7 +23802,7 @@
           "d1_foreign_vr": 91.6,
           "d5_trust_vr": 256.29,
           "d5_foreign_vr": 101.87,
-          "rank": 12
+          "rank": 11
         },
         {
           "stock_id": "1319",
@@ -23840,7 +23821,7 @@
           "d1_foreign_vr": 132.9,
           "d5_trust_vr": 308.24,
           "d5_foreign_vr": 100.37,
-          "rank": 13
+          "rank": 12
         },
         {
           "stock_id": "2881",
@@ -23859,7 +23840,7 @@
           "d1_foreign_vr": 158.39,
           "d5_trust_vr": 46.35,
           "d5_foreign_vr": 62.22,
-          "rank": 14
+          "rank": 13
         },
         {
           "stock_id": "6890",
@@ -23878,7 +23859,7 @@
           "d1_foreign_vr": 12.96,
           "d5_trust_vr": 118.97,
           "d5_foreign_vr": 42.29,
-          "rank": 15
+          "rank": 14
         },
         {
           "stock_id": "2880",
@@ -23897,7 +23878,7 @@
           "d1_foreign_vr": 53.4,
           "d5_trust_vr": 941.97,
           "d5_foreign_vr": 596.02,
-          "rank": 16
+          "rank": 15
         },
         {
           "stock_id": "2015",
@@ -23916,7 +23897,7 @@
           "d1_foreign_vr": 358.68,
           "d5_trust_vr": 29.07,
           "d5_foreign_vr": 163.97,
-          "rank": 17
+          "rank": 16
         },
         {
           "stock_id": "2887",
@@ -23935,7 +23916,7 @@
           "d1_foreign_vr": 1099.88,
           "d5_trust_vr": 543.77,
           "d5_foreign_vr": 289.34,
-          "rank": 18
+          "rank": 17
         },
         {
           "stock_id": "8454",
@@ -23954,7 +23935,7 @@
           "d1_foreign_vr": 3.24,
           "d5_trust_vr": 55.68,
           "d5_foreign_vr": 17.05,
-          "rank": 19
+          "rank": 18
         },
         {
           "stock_id": "2379",
@@ -23973,6 +23954,25 @@
           "d1_foreign_vr": 47.55,
           "d5_trust_vr": 52.96,
           "d5_foreign_vr": 50.51,
+          "rank": 19
+        },
+        {
+          "stock_id": "2353",
+          "stock_name": "宏碁",
+          "close": 36.95,
+          "close_chg": 4.67,
+          "d1_trust_k": 992000,
+          "d1_foreign_k": -15646446,
+          "d1_total_k": -14654446,
+          "d1_total_lots": -396602.1,
+          "d5_trust_k": 10372304,
+          "d5_foreign_k": -83242473,
+          "d5_total_k": -72870169,
+          "d5_total_lots": -1972129.1,
+          "d1_trust_vr": 54.14,
+          "d1_foreign_vr": 853.98,
+          "d5_trust_vr": 39.71,
+          "d5_foreign_vr": 318.72,
           "rank": 20
         }
       ],
@@ -24130,25 +24130,6 @@
           "rank": 8
         },
         {
-          "stock_id": "9941",
-          "stock_name": "裕融",
-          "close": 84.1,
-          "close_chg": 1.33,
-          "d1_trust_k": 3593768,
-          "d1_foreign_k": -830839,
-          "d1_total_k": 2762929,
-          "d1_total_lots": 32852.9,
-          "d5_trust_k": 18860692,
-          "d5_foreign_k": -12466460,
-          "d5_total_k": 6394232,
-          "d5_total_lots": 76031.3,
-          "d1_trust_vr": 583.51,
-          "d1_foreign_vr": 134.9,
-          "d5_trust_vr": 536.47,
-          "d5_foreign_vr": 354.6,
-          "rank": 9
-        },
-        {
           "stock_id": "2855",
           "stock_name": "統一證",
           "close": 54.0,
@@ -24165,25 +24146,44 @@
           "d1_foreign_vr": 561.53,
           "d5_trust_vr": 506.29,
           "d5_foreign_vr": 644.61,
-          "rank": 10
+          "rank": 9
         },
         {
           "stock_id": "2618",
           "stock_name": "長榮航",
           "close": 37.0,
           "close_chg": 1.65,
-          "d1_trust_k": -7431620,
-          "d1_foreign_k": 4999299,
-          "d1_total_k": -2432321,
-          "d1_total_lots": -65738.4,
-          "d5_trust_k": 42856206,
-          "d5_foreign_k": -65919154,
-          "d5_total_k": -23062948,
-          "d5_total_lots": -623322.9,
-          "d1_trust_vr": 539.75,
-          "d1_foreign_vr": 363.09,
-          "d5_trust_vr": 429.73,
-          "d5_foreign_vr": 660.99,
+          "d1_trust_k": 109475,
+          "d1_foreign_k": -2432321,
+          "d1_total_k": -2322846,
+          "d1_total_lots": -62779.6,
+          "d5_trust_k": 50397301,
+          "d5_foreign_k": -73350774,
+          "d5_total_k": -22953473,
+          "d5_total_lots": -620364.1,
+          "d1_trust_vr": 7.95,
+          "d1_foreign_vr": 176.66,
+          "d5_trust_vr": 505.35,
+          "d5_foreign_vr": 735.51,
+          "rank": 10
+        },
+        {
+          "stock_id": "9941",
+          "stock_name": "裕融",
+          "close": 84.1,
+          "close_chg": 1.33,
+          "d1_trust_k": -44000,
+          "d1_foreign_k": 2762929,
+          "d1_total_k": 2718929,
+          "d1_total_lots": 32329.7,
+          "d5_trust_k": 15222924,
+          "d5_foreign_k": -8872692,
+          "d5_total_k": 6350232,
+          "d5_total_lots": 75508.1,
+          "d1_trust_vr": 7.14,
+          "d1_foreign_vr": 448.61,
+          "d5_trust_vr": 433.0,
+          "d5_foreign_vr": 252.38,
           "rank": 11
         },
         {
